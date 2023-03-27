@@ -265,7 +265,7 @@ Step 9) Install custom plugins
     
  Step 9.5) PiSugar Plugin 
   #Ensure PiSugar Power Manager is installed:
-  curl http://cdn.pisugar.com/release/Pisugar-power-manager.sh | sudo bash
+  curl http://cdn.pisugar.com/release/pisugar-power-manager.sh | sudo bash
   cd /usr/local/share/pwnagotchi/custom-plugins/
   sudo nano pisugar2.py
   #locate and modify the following contents of 'def on_ui_setup':
