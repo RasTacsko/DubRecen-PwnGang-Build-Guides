@@ -1,7 +1,7 @@
 # *** Pwnagotchi Build Guide ***
 Description:
   * notes for building my pwnagotchi
-  * Based on: the guide from CyberSnek (https://pastebin.com/bTkXiZ52)
+  * Based on the guide from CyberSnek (https://pastebin.com/bTkXiZ52)
   * Last Updated: 2023 April
  
 # *** Hardware: ***
