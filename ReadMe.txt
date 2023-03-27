@@ -1,10 +1,10 @@
-# *** Pwnagotchi Build Guide ***
+*** Pwnagotchi Build Guide ***
 Description:
   * notes for building my pwnagotchi
   * Based on the guide from CyberSnek (https://pastebin.com/bTkXiZ52)
   * Last Updated: 2023 April
  
-# *** Hardware: ***
+*** Hardware: ***
    * Raspberry Pi 3b
    * Pitft 2,8" resistive touch
    * PiSugar 3 Plus 5000 mAh UPS (pending)
@@ -29,14 +29,19 @@ Description:
  
 *** Build Instructions Below: ***
  
-Step 1) Download Pwnagotchi image from pwnagotchi.ai
+Step 1) Download Pwnagotchi image
+  * Official repo from Evilsocket: https://github.com/evilsocket/pwnagotchi/releases
+  * 1.5.5 with waveshare V3 patch: https://archive.org/details/pwnagotchi_1.5.5_WSV3Patched
+  * 1.5.6 fork from Dr.Schottky:   https://github.com/DrSchottky/pwnagotchi/releases
+  * 1.6.x fork from Aluminium-Ice: https://github.com/aluminum-ice/pwnagotchi/releases
+  
        Note: version 1.5.5 is the latest version as of April 2022
              Many have recommended instead to flash version 1.5.3
              in order to avoid reported bugs regarding AI mode not starting.
              once installed, version 1.5.3 will automatically update to 1.5.5
-             with an established internet connection (host connection sharing or bt-tether)
- Download version 1.5.3 to avoid having to fix AI Mode. 
-      Remediation guidance for v1.5.5 AI Mode bug is available from u/panoptyk on Reddit. See Link in Kudos section above.
+             with an established internet connection (host connection sharing or bt-tether) 
+             Download version 1.5.3 to avoid having to fix AI Mode. 
+             Remediation guidance for v1.5.5 AI Mode bug is available from u/panoptyk on Reddit. See Link in Kudos section above.
  
 Step 2) Flash pwnagotchi image to microSD.
        Note: Recommended to use "balenaEtcher" to flash the image.
@@ -50,158 +55,136 @@ Step 3) Build your initial config.toml
              essential plugins, such as 'bt-tether'.
  
 ######## start of config.toml ########
- 
-Main settings
 main.name = "pwnagotchi"
 main.lang = "en"
-main.custom_plugins = "/usr/local/share/pwnagotchi/custom-plugins/"
 main.whitelist = [
-  "Other...",
+ "Your",
+ "Network",
+ "Here",
 ]
- 
-#Reporting results to PwnGRID
 main.plugins.grid.enabled = true
-main.plugins.grid.report = true
+main.plugins.grid.report = truee
 main.plugins.grid.exclude = [
-  "Other..."
+ "Your",
+ "Network",
+ "Here",
 ]
- 
-#Display configuration
-ui.display.enabled = false #set to false for now
-ui.display.type = "waveshare37inch" #"waveshare37inch" doesn't exist (yet). To be created later...
+
+main.plugins.bt-tether.enabled = true
+main.plugins.bt-tether.devices.android-phone.enabled = true
+main.plugins.bt-tether.devices.android-phone.search_order = 1
+main.plugins.bt-tether.devices.android-phone.mac = "CH:AN:GE:XX:MM:EE" # Change this to your phones BT MAC
+main.plugins.bt-tether.devices.android-phone.ip = "192.168.44.44" # If you have multiple pwnagotchi units, they will need different IPs 
+main.plugins.bt-tether.devices.android-phone.netmask = 24
+main.plugins.bt-tether.devices.android-phone.interval = 1
+main.plugins.bt-tether.devices.android-phone.scantime = 10
+main.plugins.bt-tether.devices.android-phone.max_tries = 0
+main.plugins.bt-tether.devices.android-phone.share_internet = true
+main.plugins.bt-tether.devices.android-phone.priority = 1
+
+main.confd = "/etc/pwnagotchi/conf.d/"
+main.custom_plugins = "/usr/local/share/pwnagotchi/installed-plugins/"  # Some plugins install say different, use only one folder for custom plugins
+main.custom_plugin_repos = [
+ "https://github.com/evilsocket/pwnagotchi-plugins-contrib/archive/master.zip",
+ "https://github.com/Teraskull/pwnagotchi-community-plugins/archive/master.zip",
+]
+main.iface = "mon0"
+main.mon_start_cmd = "/usr/bin/monstart"
+main.mon_stop_cmd = "/usr/bin/monstop"
+main.mon_max_blind_epochs = 50
+main.no_restart = false
+main.filter = ""
+main.log.path = "/var/log/pwnagotchi.log"
+main.log.rotation.enabled = true
+main.log.rotation.size = "10M"
+
+ui.display.enabled = true
+ui.display.rotation = 180
+ui.display.type = "spotpear24inch" # the spotpear24 inch display is using the same FB method as the pitft, you can change later
 ui.display.color = "black"
- 
-#Reduce Writes to preserve SD Lifespan
+
+# The web ui will be available from phone on the previously set IP, or if you connect to a router check the Pi-s IP address for web the web ui
+ui.web.username = "changeme"
+ui.web.password = "changeme"
+ui.web.enabled = true
+ui.web.address = "0.0.0.0"                  
+ui.web.origin = ""
+ui.web.port = 8080
+ui.web.on_frame = ""
+
 fs.memory.enabled = true
 fs.memory.mounts.log.enabled = true
 fs.memory.mounts.data.enabled = true
- 
-#bt-tether settings
-main.plugins.bt-tether.enabled = true
-main.plugins.bt-tether.devices.ios-phone.enabled = true
-main.plugins.bt-tether.devices.ios-phone.search_order = 1
-main.plugins.bt-tether.devices.ios-phone.mac = "CH:AN:GE:XX:MM:EE" #mobile Bluetooth MAC
-main.plugins.bt-tether.devices.ios-phone.ip = "172.20.10.6" #custom static IP for iPhone PAN
-main.plugins.bt-tether.devices.ios-phone.netmask = 24
-main.plugins.bt-tether.devices.ios-phone.interval = 1
-main.plugins.bt-tether.devices.ios-phone.scantime = 10
-main.plugins.bt-tether.devices.ios-phone.max_tries = 10
-main.plugins.bt-tether.devices.ios-phone.share_internet = true
-main.plugins.bt-tether.devices.ios-phone.priority = 1
- 
+
 ######## end of config.toml ########
  
 Step 4) Copy config.toml to MicroSD (boot)
-        Note: Insert the microSD card flashed in Step 3.
- Open the new drive titled "boot", and copy over your config.toml
+        Note: Insert the microSD card flashed in Step 3. Open the new drive titled "boot", and copy over your config.toml
  
-Step 5) Boot pwnagotchi for the first time, connected via USB (will boot into MANU Mode).
+Step 5) Boot pwnagotchi for the first time
         WARNING: BE PATIENT. The First boot will take longer than average due to key generation.
-        NOTE: If you specified settings for bt-tether plugin, ensure your mobile device is
-              nearby and listening for new bluetooth devices to pair. 
-              Ensure Internet sharing via Personal Hotspot is enabled.
- Your mobile device will be prompted to pair with your pwnagotchi.
- 
-Step 6) Configure host Internet sharing (macOS) 
-  This guide will cover host internet sharing for macOS only. Windows host internet sharing is available from u/panoptyk on Reddit. See Link in Kudos section above.
-  ETH0 Instructions for Internet access via onboard ethernet port can be found via the following link, thanks to u/Capt_Panic on Reddit: https://reddit.com/r/pwnagotchi/comments/ucig3u/configuring_pi_3_b_for_pnwagotchi_for_nic/
- ** On pwnagotchi: **
-  ssh pi@10.0.0.2
-     # type "yes" if prompted to accept the ssh key for this not-yet known host.
-     # default password: "raspberry" (to be changed later)
-     # Note: If you receive "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!":
-           # This is due to a previous ssh entry conflicting with your pwnagtochi's IP/hostname.
-           sudo nano /Users/{user}/.ssh/known_hosts
-           # comment-out or delete lines resembling your raspberry pi IP or hostname
- 
-  sudo nano /etc/resolv.conf
-       # modify "nameserver 127.0.0.1" to be "nameserver 1.1.1.1"
- 
-  sudo nano /etc/network/interfaces.d/usb0-cfg
-       # add "dns-nameservers 1.1.1.1" under the gateway line"
- 
-  sudo nano /etc/dnsmasq.conf
-       # add "server=1.1.1.1@usb0"
- 
-  sudo systemctl disable dnsmasq
- 
-  sudo chattr +i /etc/resolv.conf
-      # make file immutable 
- 
- ** On host macOS system: **
-      # Manually configure network device (RNDIS/Ethernet Gadget) IPv4 to support
-      # default IP addressing.
-        "IPv4 Address: 10.0.0.1"
-        "Subnet Mask: 255.255.255.0"
-        "Router: 10.0.0.1"
- 
-  sudo ./macos_connection_share.sh 
-      # Note: Internet sharing scripts obtained from pwnagotchi.ai. 
-      #       More scripts are available for Windows and Linux OS at pwnagotchi.ai
-      #
-      # The Raspberry Pi 4b comes equiped with a Ethernet Port, allowing most users the ability to directly connect 
-      # their pwnagotchi to their home router, or to their computer via the CAT 5 port. This is a far simpler method
-      # of obtaining internet access than the instructions I provide below. However, if you are like me, the method below 
-      # provides you the ability to quickly connect your rpi to your comptuer on-the-go via a USB C cable.
-      #
-      # Troubleshooting:
-        Unable to ping 1.1.1.1 from pwnagotchi with macOS host sharing:
-        # "sudo pfctl -sn" may sometimes report the following:
-          # nat on en0 inet from 10.0.0.0/24 to any -> (en0) round-robin
-          # Fix via: "sudo echo "nat on en0 from en6:network to any -> en0" | sudo pfctl -f -"
-          # The above cmd sets proper nat direction (rather than round-robin DNS).
- 
-Step 7) Install waveshare 3.7 e-ink display
- cd ~
- sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/ 
-      #make custom-plugins directory defined in config.toml, if not done so already.
-      
- sudo mkdir /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/hw/libs/waveshare/v37inch
- 
- sudo git clone https://github.com/hannadiamond/pwnagotchi-plugins.git
- 
- cd ./pwnagotchi-plugins/waveshare_37inch/
- 
- sudo cp -r /home/pi/pwnagotchi-plugins/waveshare_37inch/v37inch/. /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/hw/libs/waveshare/v37inch
- 
- sudo cp waveshare37inch.py /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/hw
- 
+        NOTE: If you specified settings for bt-tether plugin, ensure your mobile device is nearby and listening for new bluetooth devices to pair. 
+              Ensure Internet sharing via Personal Hotspot is enabled. Your mobile device will be prompted to pair with your pwnagotchi.
+
+Step 6) Install pitft display drivers
+
+For detailed instruction you can visit the adafruit website: https://learn.adafruit.com/adafruit-pitft-3-dot-5-touch-screen-for-raspberry-pi/overview
+I have the 2,4" and 2,8" resistive touch displays, the resolution is 320x240 for both, and we will set it as a frame buffer display
+SSH to the pi
+In terminal we need the following commands:
+
+cd ~
+sudo apt-get update
+sudo apt-get install -y git python3-pip
+sudo pip3 install --upgrade adafruit-python-shell click
+git clone https://github.com/adafruit/Raspberry-Pi-Installer-Scripts.git
+cd Raspberry-Pi-Installer-Scripts
+sudo python3 adafruit-pitft.py
+
+When asked during the installation you should select:
+1 - PiTFT 2,4", 2,8" or 3,2" resistive (240x320) (320x240)
+1 - 90 degrees (landscape)
+N - You would NOT like the console to appear on the display
+N - You would NOT like the HDMI display to mirror on the display either
+
+Reboot your pwnagotchi, and it should be smiling soon...
+
+
+Step 7) Adding support for the pitft
  sudo nano /etc/pwnagotchi/config.toml
       #set: ui.display.enabled = true
-      #set: ui.display.type = "waveshare37inch"
+      #set: ui.display.type = "pitft"
  
  sudo nano /usr/local/lib/python3.7/dist-packages/pwnagotchi/utils.py
  #Locate "def load_config" and add the following:
- elif config['ui']['display']['type'] in ('ws_37inch', 'ws37inch', 'waveshare_37inch', 'waveshare37inch'):
-    config['ui']['display']['type'] = 'waveshare37inch'
+ elif config['ui']['display']['type'] in ('pitft', 'pitft28r', 'pitft24r'):
+    config['ui']['display']['type'] = 'pitft'
  
  sudo nano /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/display.py
  #Add the following:
- def is_waveshare37inch(self):
-   return self.implementation.name == 'waveshare37inch'
- 
- sudo nano /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/components.py
- #Locate "class LabeledValue" and REPLACE "def draw" with:
-     def draw(self, canvas, drawer):
-        if self.label is None:
-            drawer.text(self.xy, self.value, font=self.label_font, fill=self.color)
-        else:
-            pos = self.xy
-            drawer.text(pos, self.label, font=self.label_font, fill=self.color)
-            drawer.text((pos[0] + self.label_spacing + self.label_font.getsize(self.label)[0], pos[1]), self.value, font=self.text_font, fill=self.color)
+ def is_pitft(self):
+   return self.implementation.name == 'pitft'
  
  sudo nano /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/hw/__init__.py
  #Add the following:
- from pwnagotchi.ui.hw.waveshare37inch import Waveshare37inch
+ from pwnagotchi.ui.hw.pitft import Pitft
  #Also, add the following into the elif block of the code:
- elif config['ui']['display']['type'] == 'waveshare37inch':
-    return Waveshare37inch(config)
+ elif config['ui']['display']['type'] == 'pitft':
+    return Pitft(config)
     
- sudo systemctl restart pwnagotchi.service #to initialize new waveshare 3.7 display. 
+ sudo nano /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/hw/spotpear24inch.py
+ #Modify the class as follows
+ class Pitft(DisplayImpl):
+    def __init__(self, config):
+        super(Pitft, self).__init__(config, 'pitft')
+        self._display = None
+ #Save as pitft.py
+ #If you need to modify the basic coordinates or font sizes you can do it in this file
+    
+ sudo systemctl restart pwnagotchi.service #to initialize new display. 
     # Troubleshooting: If the screen does not come on: 
     # Just SSH into your pwnagotchi via USB and check your work from the beginning of step 7.
-    # I typically add the waveshare37 code snippets right between the sections for "waveshare27" and 
-    # "waveshare29" in their respective sections within each script being modified.
+    # I typically add the pitft code snippets at the end of the config files.
  
 Step 8) Install & Configure Wireless adapter
  lsusb #ensure wifi adapter is plugged in and detected
