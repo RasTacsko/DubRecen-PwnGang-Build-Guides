@@ -63,7 +63,7 @@ main.whitelist = [
  "Here",
 ]
 main.plugins.grid.enabled = true
-main.plugins.grid.report = truee
+main.plugins.grid.report = true
 main.plugins.grid.exclude = [
  "Your",
  "Network",
@@ -148,6 +148,10 @@ N - You would NOT like the console to appear on the display
 N - You would NOT like the HDMI display to mirror on the display either
 
 Reboot your pwnagotchi, and it should be smiling soon...
+
+For backlight control you can use these commands to turn it off/on:
+sudo sh -c 'echo "0" > /sys/class/backlight/soc\:backlight/brightness'
+sudo sh -c 'echo "1" > /sys/class/backlight/soc\:backlight/brightness'
 
 
 Step 7) Adding support for the pitft
