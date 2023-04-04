@@ -292,6 +292,7 @@ class ILI9341(object):
         self.data(0x00)
         self.command(ILI9341_GAMMASET)    # Gamma curve selected
         self.data(0x01)
+        
         self.command(ILI9341_GMCTRP1)    # Set Gamma
         self.data(0x0F)
         self.data(0x31)
@@ -308,6 +309,7 @@ class ILI9341(object):
         self.data(0x0E)
         self.data(0x09)
         self.data(0x00)
+        
         self.command(ILI9341_GMCTRN1)    # Set Gamma
         self.data(0x00)
         self.data(0x0E)
@@ -330,8 +332,8 @@ class ILI9341(object):
         else:
             self.command(ILI9341_INVOFF)  # Don't invert display
 
-        self.command(ILI9341_SLPOUT)    # Exit Sleep
-        time.sleep(0.120)
+        self.command(ILI9341_SLPOUT)   
+        
         self.command(ILI9341_DISPON)    # Display on
         time.sleep(0.100)               # 100 ms
 
