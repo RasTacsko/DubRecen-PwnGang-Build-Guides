@@ -4,11 +4,11 @@ import time
 import numpy as np
 
 
-class ST7789(object):
-    """class for ST7789  240*240 1.3inch OLED displays."""
+class ILI9341(object):
+    """class for ILI9341  240*240 1.3inch OLED displays."""
 
-    def __init__(self, spi, rst=27, dc=25, bl=24):
-        self.width = 240
+    def __init__(self, spi, rst=None, dc=25, bl=18):
+        self.width = 320
         self.height = 240
         # Initialize DC RST pin
         self._dc = dc
