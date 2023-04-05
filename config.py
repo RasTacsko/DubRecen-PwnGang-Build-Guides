@@ -10,7 +10,7 @@
 import spidev
 
 # Pin definition
-RST_PIN = 27
+RST_PIN = 24
 DC_PIN = 25
 BL_PIN = 18
 
