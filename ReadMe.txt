@@ -167,7 +167,7 @@ Step 7) Adding support for the pitft
  sudo nano /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/display.py
  #Add the following:
  def is_pitft(self):
-   return self.implementation.name == 'pitft'
+   return self._implementation.name == 'pitft'
  
  sudo nano /usr/local/lib/python3.7/dist-packages/pwnagotchi/ui/hw/__init__.py
  #Add the following:
@@ -218,7 +218,7 @@ Step 8) Install & Configure Wireless adapter
 Step 9) Install custom plugins 
  #Consider this step OPTIONAL, unless you would like these custom plugins. Otherwise, proceed to Step 10.
  cd ~
- sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/ 
+ sudo mkdir /usr/local/share/pwnagotchi/installed-plugins/ 
       #make custom-plugins directory defined in config.toml, if not done so already.
  
  Step 9.1) aircrackonly plugin
@@ -226,11 +226,14 @@ Step 9) Install custom plugins
   sudo nano /etc/pwnagotchi/config.toml
        # add the following lines to config.toml:
          main.plugins.aircrackonly.enabled = true
-         main.plugins.aircrackonly.face = "(>.<)"
+         main.plugins.aircrackonly.face = "( >.< )"
+         
+  # Aircrack-ng needed, to install:
+  apt-get install aircrack-ng
         
  Step 9.2) Exp plugin #Generates an "experiance" level and progress bar for your pwnagotchi.
   #Copy exp.py from git: https://github.com/GaelicThunder/Experience-Plugin-Pwnagotchi
-  sudo nano /usr/local/share/pwnagotchi/custom-plugins/exp.py #paste contents of exp.py from github to exp.py on your pwnagotchi.
+  sudo nano /usr/local/share/pwnagotchi/installed-plugins/exp.py #paste contents of exp.py from github to exp.py on your pwnagotchi.
   sudo nano /etc/pwnagotchi/config.toml
   #add the following to your config.toml. Please note that the positions have been adjusted to accomodate the waveshare 3.7 display.
     main.plugins.exp.enabled = true
@@ -241,7 +244,7 @@ Step 9) Install custom plugins
  
  Step 9.3) Age plugin #Generates the pwnagotchi's "age" and "strength".
   #Copy exp.py from git: https://github.com/hannadiamond/pwnagotchi-plugins/blob/main/plugins/age.py
-  sudo nano /usr/local/share/pwnagotchi/custom-plugins/age.py #paste contents of exp.py from github to exp.py on your pwnagotchi.
+  sudo nano /usr/local/share/pwnagotchi/installed-plugins/age.py #paste contents of exp.py from github to exp.py on your pwnagotchi.
   sudo nano /etc/pwnagotchi/config.toml
   #add the following to your config.toml. Please note that the positions have been adjusted to accomodate the waveshare 3.7 display.
     main.plugins.age.enabled = true
@@ -266,7 +269,7 @@ Step 9) Install custom plugins
  Step 9.5) PiSugar Plugin 
   #Ensure PiSugar Power Manager is installed:
   curl http://cdn.pisugar.com/release/pisugar-power-manager.sh | sudo bash
-  cd /usr/local/share/pwnagotchi/custom-plugins/
+  cd /usr/local/share/pwnagotchi/installed-plugins/
   sudo nano pisugar2.py
   #locate and modify the following contents of 'def on_ui_setup':
         def on_ui_setup(self, ui):
