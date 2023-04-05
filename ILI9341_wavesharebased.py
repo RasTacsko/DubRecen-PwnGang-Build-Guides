@@ -7,7 +7,7 @@ import numpy as np
 class ILI9341(object):
     """class for ILI9341  240*240 1.3inch OLED displays."""
 
-    def __init__(self, spi, rst=None, dc=25, bl=18):
+    def __init__(self, spi, rst=24, dc=25, bl=18):
         self.width = 320
         self.height = 240
         # Initialize DC RST pin
