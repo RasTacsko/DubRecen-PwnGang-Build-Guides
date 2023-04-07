@@ -363,9 +363,9 @@ class ILI9341(object):
         self.data(0x0F)
         
         if self._invert:
-            self.command(ST7789_INVON)   # Invert display
+            self.command(ILI9341_INVON)   # Invert display
         else:
-            self.command(ST7789_INVOFF)  # Don't invert display
+            self.command(ILI9341_INVOFF)  # Don't invert display
        
         self.command(ILI9341_SLPOUT)    # Exit Sleep
         time.sleep(0.120)
