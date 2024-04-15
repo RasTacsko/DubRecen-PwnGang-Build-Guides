@@ -128,7 +128,6 @@ Step 9) Back up all your hard work! Download the Backup script from Github.
 Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
 Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
 
-# what to backup
 FILES_TO_BACKUP="/root/brain.nn \
   /root/brain.json \
   /root/.api-report.json \
@@ -156,7 +155,7 @@ FILES_TO_BACKUP="/root/brain.nn \
   /usr/local/share/pwnagotchi/custom-plugins \
   /usr/local/lib/python3.11/dist-packages/pwnagotchi"
 
- # Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
+Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
 sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh
 
 Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
