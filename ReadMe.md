@@ -1,19 +1,34 @@
-[TOCM]
+# Table of contents
 
-[TOC]
-# Pwnagotchi Build Guide
+- [**Pwnagotchi Build Guide**](#pwnagotchi-build-guide)
+  - [**Build Instructions**](#build-instructions)
+    - [**Step 1) Download the pwnagotchi image**](#step-1-download-the-pwnagotchi-image)
+    - [**Step 2) Flash pwnagotchi image to microSD**](#step-2-flash-pwnagotchi-image-to-microsd)
+    - [**Step 3) Build your initial config.toml**](#step-3-build-your-initial-configtoml)
+    - [**Step 4) Copy config.toml to MicroSD (boot)**](#step-4-copy-configtoml-to-microsd-boot)
+    - [**Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**](#step-5-if-you-are-using-an-spi-lcd-screen-with-pi3-or-pi0-you-may-have-to-modifiy-the-configtxt)
+    - [**Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.**](#step-6-boot-pwnagotchi-for-the-first-time-warning-be-patient)
+    - [**Step 7) Bluetooth connection manually**](#step-7-bluetooth-connection-manually)
+    - [**Step 8) Change all the default passwords**](#step-8-change-all-the-default-passwords)
+    - [**Step 9) Install plugins**](#step-9-install-plugins)
+      - [**Step - 9.1) Default plugins I use:**](#step---91-default-plugins-i-use)
+      - [**Step 9.2) 3rd party plugins:**](#step-92-3rd-party-plugins)
+    - [**Step 10) Back up all your hard work! Download the Backup script from Github.**](#step-10-back-up-all-your-hard-work-download-the-backup-script-from-github)
+- [**My Hardware:**](#my-hardware)
+- [**My Setups:**](#my-setups)
+# **Pwnagotchi Build Guide**
 
-## Build Instructions
+## **Build Instructions**
 
 [**PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!**](http://https://pwnagotchi.org/ "PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!")
 
-- ###**Step 1) Download the pwnagotchi image**
+###**Step 1) Download the pwnagotchi image**
 
 	I use [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"). It is under active development based on the community feedback and updated frequently with bugfixes, new features, and supports more than 80 screens. Also you can skip most of these steps, if you can ssh in to your device, and use the wizard:
 
 	`sudo pwnagotchi --wizard`
 
-- ###**Step 2) Flash pwnagotchi image to microSD**
+###**Step 2) Flash pwnagotchi image to microSD**
 
 	*Note: Recommended to use **[Raspberry Imager](https://www.raspberrypi.com/software/ "Raspberry Imager")** to flash the image.*
 
@@ -21,55 +36,55 @@
 
 	Before flashing the image I use the Raspberry Imager, to set the timezone, and change the default user/password for the OS.
 
-- ###**Step 3) Build your initial config.toml**
+###**Step 3) Build your initial config.toml**
 
 	Your initial config.toml will contain the baseline configuration for your pwnagotchi, such as the name of the device. It is recommended to avoid trying to configure all of your plugins at this stage, and only focus on the essential plugins, such as bt-tether, Modify as necessary!
 
-	```toml
-	main.name = "Pwnagotchi"
-	main.whitelist = [
-	 "your wifi here",
-	]
+```toml
+main.name = "Pwnagotchi"
+main.whitelist = [
+ "your wifi here",
+]
 
-	main.plugins.bt-tether.enabled = true
-	main.plugins.bt-tether.devices.android-phone.enabled = true
-	main.plugins.bt-tether.devices.android-phone.search_order = 1
-	main.plugins.bt-tether.devices.android-phone.mac = "MA:CA:DD:RE:SS"
-	main.plugins.bt-tether.devices.android-phone.ip = "192.168.44.44"
-	main.plugins.bt-tether.devices.android-phone.netmask = 24
-	main.plugins.bt-tether.devices.android-phone.interval = 1
-	main.plugins.bt-tether.devices.android-phone.scantime = 0
-	main.plugins.bt-tether.devices.android-phone.max_tries = 0
-	main.plugins.bt-tether.devices.android-phone.share_internet = true
-	main.plugins.bt-tether.devices.android-phone.priority = 1
+main.plugins.bt-tether.enabled = true
+main.plugins.bt-tether.devices.android-phone.enabled = true
+main.plugins.bt-tether.devices.android-phone.search_order = 1
+main.plugins.bt-tether.devices.android-phone.mac = "MA:CA:DD:RE:SS"
+main.plugins.bt-tether.devices.android-phone.ip = "192.168.44.44"
+main.plugins.bt-tether.devices.android-phone.netmask = 24
+main.plugins.bt-tether.devices.android-phone.interval = 1
+main.plugins.bt-tether.devices.android-phone.scantime = 0
+main.plugins.bt-tether.devices.android-phone.max_tries = 0
+main.plugins.bt-tether.devices.android-phone.share_internet = true
+main.plugins.bt-tether.devices.android-phone.priority = 1
 
-	main.plugins.bt-tether.devices.ios-phone.enabled = false
-	main.plugins.bt-tether.devices.ios-phone.search_order = 2
-	main.plugins.bt-tether.devices.ios-phone.mac = "MA:CA:DD:RE:SS"
-	main.plugins.bt-tether.devices.ios-phone.ip = "172.20.10.6"
-	main.plugins.bt-tether.devices.ios-phone.netmask = 24
-	main.plugins.bt-tether.devices.ios-phone.interval = 1
-	main.plugins.bt-tether.devices.ios-phone.scantime = 0
-	main.plugins.bt-tether.devices.ios-phone.max_tries = 0
-	main.plugins.bt-tether.devices.ios-phone.share_internet = true
-	main.plugins.bt-tether.devices.ios-phone.priority = 999
+main.plugins.bt-tether.devices.ios-phone.enabled = false
+main.plugins.bt-tether.devices.ios-phone.search_order = 2
+main.plugins.bt-tether.devices.ios-phone.mac = "MA:CA:DD:RE:SS"
+main.plugins.bt-tether.devices.ios-phone.ip = "172.20.10.6"
+main.plugins.bt-tether.devices.ios-phone.netmask = 24
+main.plugins.bt-tether.devices.ios-phone.interval = 1
+main.plugins.bt-tether.devices.ios-phone.scantime = 0
+main.plugins.bt-tether.devices.ios-phone.max_tries = 0
+main.plugins.bt-tether.devices.ios-phone.share_internet = true
+main.plugins.bt-tether.devices.ios-phone.priority = 999
 
-	ui.display.enabled = true
-	ui.display.type = "waveshare_4"
-	ui.fps = 1
-	ui.invert = false
+ui.display.enabled = true
+ui.display.type = "waveshare_4"
+ui.fps = 1
+ui.invert = false
 
-	ui.web.enabled = true
-	ui.web.username = "changeme"
-	ui.web.password = "changeme"
-	```
+ui.web.enabled = true
+ui.web.username = "changeme"
+ui.web.password = "changeme"
+```
 
-- ###**Step 4) Copy config.toml to MicroSD (boot)**
+###**Step 4) Copy config.toml to MicroSD (boot)**
 
 	*Note: If you removed, insert the microSD card flashed in Step 3.*
 	Open the new drive titled "boot", and copy over your config.toml
 
-- ###**Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**
+###**Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**
 
 	For jays image since 2.8.7 until now, there is some issue with the SPI chip select stuff.
 
@@ -77,13 +92,13 @@
 
 	*Note: if you are sure that you need to modify the config.txt, you can do it after flashing the card. The config.txt is directly in the cards boot partition.*
 
-- ###**Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.**
+###**Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.**
 
 	The First boot will take longer than average due to key generation.
 
 	**NOTE**: If you specified settings for bt-tether plugin, ensure your mobile device is nearby and listening for new bluetooth devices to pair. Ensure Internet sharing via Personal Hotspot is enabled. Your mobile device will be prompted to pair with your pwnagotchi.
 
-- ###**Step 7) Bluetooth connection manually**
+###**Step 7) Bluetooth connection manually**
 
 	SSH in (default login: pi, pw: raspberry)
 
@@ -98,7 +113,7 @@
 
 	`exit`
 
-- ###**Step 8) Change all the default passwords**
+###**Step 8) Change all the default passwords**
 
 	If you haven't done it with the Raspberry Imager, change the user "pi" password. Default is "raspberry"
 
@@ -114,10 +129,10 @@
 
 	Locate and update the values for:
 
-	```
-	ui.web.username = "changeme"
-	ui.web.password = "changeme"
-	```
+```toml
+ui.web.username = "changeme"
+ui.web.password = "changeme"
+```
 
 	Update bettercap password, if you want to, I usually leave it as-is. Default is "pwnagotchi"
 
@@ -125,10 +140,10 @@
 
 	locate and update the values for:
 
-	```
-	bettercap.username = "pwnagotchi"
-	bettercap.password = "pwnagotchi"
-	```
+```toml
+bettercap.username = "pwnagotchi"
+bettercap.password = "pwnagotchi"
+```
 
 	For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
 
@@ -140,7 +155,7 @@
 
 	`sudo systemctl restart pwnagotchi.service`
 
-- ###**Step 9) Install plugins**
+###**Step 9) Install plugins**
 
 	Consider this step OPTIONAL, unless you would like these custom plugins. Otherwise, proceed to Step 10.
 
@@ -152,7 +167,7 @@
 	*Plugins marked with &#42; are not tested by me yet, or needs some tweaking to work on my setup.
 Details soon*
 
-- ####**Step - 9.1) Default plugins I use:**
+####**Step - 9.1) Default plugins I use:**
 	- 	auto-update
 	- 	bt-tether
 	- 	fix-services
@@ -167,7 +182,7 @@ Details soon*
 	- 	webgpsmap
 	- 	wpa-sec
 
-- ####**Step 9.2) 3rd party plugins:**
+####**Step 9.2) 3rd party plugins:**
 	- Clock
 	- PiSugar3
 	- Poweruitls
@@ -184,45 +199,45 @@ Details soon*
 	- **Achievement*****
 	- Shower Thoughts
 
-- ###**Step 10) Back up all your hard work! Download the Backup script from Github.**
+###**Step 10) Back up all your hard work! Download the Backup script from Github.**
 
 	Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
 	Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
 
-```
-FILES_TO_BACKUP="/root/brain.nn \
-  /root/brain.json \
-  /root/.api-report.json \
-  /root/.ssh \
-  /root/.bashrc \
-  /root/.profile \
-  /root/handshakes \
-  /root/peers \
-  /etc/pwnagotchi/ \
-  /etc/ssh/ \
-  /var/log/pwnagotchi.log \
-  /var/log/pwnagotchi*.gz \
-  /home/pi/.ssh \
-  /home/pi/.bashrc \
-  /home/pi/.profile \
-  /root/.api-report.json \
-  /root/.auto-update \
-  /root/.bt-tether* \
-  /root/.net_pos_saved \
-  /root/.ohc_uploads \
-  /root/.wigle_uploads \
-  /root/.wpa_sec_uploads \
-  /usr/bin/pwnlib \
-  /etc/systemd/system/pwngrid-peer.service \
-  /usr/local/share/pwnagotchi/custom-plugins \
-  /usr/local/lib/python3.11/dist-packages/pwnagotchi"
-```
-Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
-sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh
+	```
+	FILES_TO_BACKUP="/root/brain.nn \
+	  /root/brain.json \
+	  /root/.api-report.json \
+	  /root/.ssh \
+	  /root/.bashrc \
+	  /root/.profile \
+	  /root/handshakes \
+	  /root/peers \
+	  /etc/pwnagotchi/ \
+	  /etc/ssh/ \
+	  /var/log/pwnagotchi.log \
+	  /var/log/pwnagotchi*.gz \
+	  /home/pi/.ssh \
+	  /home/pi/.bashrc \
+	  /home/pi/.profile \
+	  /root/.api-report.json \
+	  /root/.auto-update \
+	  /root/.bt-tether* \
+	  /root/.net_pos_saved \
+	  /root/.ohc_uploads \
+	  /root/.wigle_uploads \
+	  /root/.wpa_sec_uploads \
+	  /usr/bin/pwnlib \
+	  /etc/systemd/system/pwngrid-peer.service \
+	  /usr/local/share/pwnagotchi/custom-plugins \
+	  /usr/local/lib/python3.11/dist-packages/pwnagotchi"
+	```
+	Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
+	`sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh`
 
-Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
+	Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
 
-## My Hardware:
+# **My Hardware:**
 - **Boards:**
 	- Raspberry Pi
 		- 0W
@@ -258,7 +273,7 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit
 - **Micro USB OTG cables and adapters**
 - **USB Ethernet adapter**
 
-## My Setups:
+# **My Setups:**
 
 | Name  | Picture  | Board  | Screen  | Case  | Power  | Extra  |
 | :------------ | :------------ | :------------ | :------------ |  :------------ | :------------ | :------------ |
