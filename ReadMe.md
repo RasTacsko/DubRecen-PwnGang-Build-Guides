@@ -32,44 +32,44 @@ Last Updated: 2023 June
 
 	Your initial config.toml will contain the baseline configuration for your pwnagotchi, such as the name of the device. It is recommended to avoid trying to configure all of your plugins at this stage, and only focus on the essential plugins, such as bt-tether, Modify as necessary!
 
-```toml
-main.name = "Pwnagotchi"
-main.whitelist = [
- "your wifi here",
-]
+	```toml
+	main.name = "Pwnagotchi"
+	main.whitelist = [
+	 "your wifi here",
+	]
 
-main.plugins.bt-tether.enabled = true
-main.plugins.bt-tether.devices.android-phone.enabled = true
-main.plugins.bt-tether.devices.android-phone.search_order = 1
-main.plugins.bt-tether.devices.android-phone.mac = "MA:CA:DD:RE:SS"
-main.plugins.bt-tether.devices.android-phone.ip = "192.168.44.44"
-main.plugins.bt-tether.devices.android-phone.netmask = 24
-main.plugins.bt-tether.devices.android-phone.interval = 1
-main.plugins.bt-tether.devices.android-phone.scantime = 0
-main.plugins.bt-tether.devices.android-phone.max_tries = 0
-main.plugins.bt-tether.devices.android-phone.share_internet = true
-main.plugins.bt-tether.devices.android-phone.priority = 1
+	main.plugins.bt-tether.enabled = true
+	main.plugins.bt-tether.devices.android-phone.enabled = true
+	main.plugins.bt-tether.devices.android-phone.search_order = 1
+	main.plugins.bt-tether.devices.android-phone.mac = "MA:CA:DD:RE:SS"
+	main.plugins.bt-tether.devices.android-phone.ip = "192.168.44.44"
+	main.plugins.bt-tether.devices.android-phone.netmask = 24
+	main.plugins.bt-tether.devices.android-phone.interval = 1
+	main.plugins.bt-tether.devices.android-phone.scantime = 0
+	main.plugins.bt-tether.devices.android-phone.max_tries = 0
+	main.plugins.bt-tether.devices.android-phone.share_internet = true
+	main.plugins.bt-tether.devices.android-phone.priority = 1
 
-main.plugins.bt-tether.devices.ios-phone.enabled = false
-main.plugins.bt-tether.devices.ios-phone.search_order = 2
-main.plugins.bt-tether.devices.ios-phone.mac = "MA:CA:DD:RE:SS"
-main.plugins.bt-tether.devices.ios-phone.ip = "172.20.10.6"
-main.plugins.bt-tether.devices.ios-phone.netmask = 24
-main.plugins.bt-tether.devices.ios-phone.interval = 1
-main.plugins.bt-tether.devices.ios-phone.scantime = 0
-main.plugins.bt-tether.devices.ios-phone.max_tries = 0
-main.plugins.bt-tether.devices.ios-phone.share_internet = true
-main.plugins.bt-tether.devices.ios-phone.priority = 999
+	main.plugins.bt-tether.devices.ios-phone.enabled = false
+	main.plugins.bt-tether.devices.ios-phone.search_order = 2
+	main.plugins.bt-tether.devices.ios-phone.mac = "MA:CA:DD:RE:SS"
+	main.plugins.bt-tether.devices.ios-phone.ip = "172.20.10.6"
+	main.plugins.bt-tether.devices.ios-phone.netmask = 24
+	main.plugins.bt-tether.devices.ios-phone.interval = 1
+	main.plugins.bt-tether.devices.ios-phone.scantime = 0
+	main.plugins.bt-tether.devices.ios-phone.max_tries = 0
+	main.plugins.bt-tether.devices.ios-phone.share_internet = true
+	main.plugins.bt-tether.devices.ios-phone.priority = 999
 
-ui.display.enabled = true
-ui.display.type = "waveshare_4"
-ui.fps = 1
-ui.invert = false
+	ui.display.enabled = true
+	ui.display.type = "waveshare_4"
+	ui.fps = 1
+	ui.invert = false
 
-ui.web.enabled = true
-ui.web.username = "changeme"
-ui.web.password = "changeme"
-```
+	ui.web.enabled = true
+	ui.web.username = "changeme"
+	ui.web.password = "changeme"
+	```
 
 - **Step 4) Copy config.toml to MicroSD (boot)**
 
