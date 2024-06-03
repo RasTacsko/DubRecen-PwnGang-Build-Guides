@@ -16,6 +16,7 @@
     - [**Step 10) Back up all your hard work! Download the Backup script from Github.**](#step-10-back-up-all-your-hard-work-download-the-backup-script-from-github)
 - [**My Hardware:**](#my-hardware)
 - [**My Setups:**](#my-setups)
+
 # **Pwnagotchi Build Guide**
 
 ## **Build Instructions**
@@ -24,21 +25,21 @@
 
 ###**Step 1) Download the pwnagotchi image**
 
-	I use [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"). It is under active development based on the community feedback and updated frequently with bugfixes, new features, and supports more than 80 screens. Also you can skip most of these steps, if you can ssh in to your device, and use the wizard:
+I use [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"). It is under active development based on the community feedback and updated frequently with bugfixes, new features, and supports more than 80 screens. Also you can skip most of these steps, if you can ssh in to your device, and use the wizard:
 
-	`sudo pwnagotchi --wizard`
+`sudo pwnagotchi --wizard`
 
 ###**Step 2) Flash pwnagotchi image to microSD**
 
-	*Note: Recommended to use **[Raspberry Imager](https://www.raspberrypi.com/software/ "Raspberry Imager")** to flash the image.*
+*Note: Recommended to use **[Raspberry Imager](https://www.raspberrypi.com/software/ "Raspberry Imager")** to flash the image.*
 
-	Several tutorials exist online (Google or YouTube) that provide instructions for flashing an image to a microSD.
+Several tutorials exist online (Google or YouTube) that provide instructions for flashing an image to a microSD.
 
-	Before flashing the image I use the Raspberry Imager, to set the timezone, and change the default user/password for the OS.
+Before flashing the image I use the Raspberry Imager, to set the timezone, and change the default user/password for the OS.
 
 ###**Step 3) Build your initial config.toml**
 
-	Your initial config.toml will contain the baseline configuration for your pwnagotchi, such as the name of the device. It is recommended to avoid trying to configure all of your plugins at this stage, and only focus on the essential plugins, such as bt-tether, Modify as necessary!
+Your initial config.toml will contain the baseline configuration for your pwnagotchi, such as the name of the device. It is recommended to avoid trying to configure all of your plugins at this stage, and only focus on the essential plugins, such as bt-tether, Modify as necessary!
 
 ```toml
 main.name = "Pwnagotchi"
@@ -81,161 +82,156 @@ ui.web.password = "changeme"
 
 ###**Step 4) Copy config.toml to MicroSD (boot)**
 
-	*Note: If you removed, insert the microSD card flashed in Step 3.*
-	Open the new drive titled "boot", and copy over your config.toml
+*Note: If you removed, insert the microSD card flashed in Step 3.*
+Open the new drive titled "boot", and copy over your config.toml
 
 ###**Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**
 
-	For jays image since 2.8.7 until now, there is some issue with the SPI chip select stuff.
+For jays image since 2.8.7 until now, there is some issue with the SPI chip select stuff.
 
-	If your screen is not showing any image, but the backlight is on, you should modify the **/boot/firmware/config.txt**, and change ***dtoverlay=spi0-0cs*** to ***dtoverlay=spi0-1cs*** under the necessary pi settings.
+If your screen is not showing any image, but the backlight is on, you should modify the **/boot/firmware/config.txt**, and change ***dtoverlay=spi0-0cs*** to ***dtoverlay=spi0-1cs*** under the necessary pi settings.
 
-	*Note: if you are sure that you need to modify the config.txt, you can do it after flashing the card. The config.txt is directly in the cards boot partition.*
+*Note: if you are sure that you need to modify the config.txt, you can do it after flashing the card. The config.txt is directly in the cards boot partition.*
 
 ###**Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.**
 
-	The First boot will take longer than average due to key generation.
+The First boot will take longer than average due to key generation.
 
-	**NOTE**: If you specified settings for bt-tether plugin, ensure your mobile device is nearby and listening for new bluetooth devices to pair. Ensure Internet sharing via Personal Hotspot is enabled. Your mobile device will be prompted to pair with your pwnagotchi.
+**NOTE**: If you specified settings for bt-tether plugin, ensure your mobile device is nearby and listening for new bluetooth devices to pair. Ensure Internet sharing via Personal Hotspot is enabled. Your mobile device will be prompted to pair with your pwnagotchi.
 
 ###**Step 7) Bluetooth connection manually**
 
-	SSH in (default login: pi, pw: raspberry)
+SSH in (default login: pi, pw: raspberry)
 
-	`sudo bluetoothctl`
+`sudo bluetoothctl`
+`scan on`
 
-	`scan on`
-	Wait until your phones mac address shows up and copy your phones mac address
+Wait until your phones mac address shows up and copy your phones mac address
 
-	`pair MA: CA: DD: RE: SS`
-
-	`trust MA: CA: DD: RE: SS`
-
-	`exit`
+`pair MA: CA: DD: RE: SS`
+`trust MA: CA: DD: RE: SS`
+`exit`
 
 ###**Step 8) Change all the default passwords**
 
-	If you haven't done it with the Raspberry Imager, change the user "pi" password. Default is "raspberry"
+If you haven't done it with the Raspberry Imager, change the user "pi" password. Default is "raspberry"
 
-	`passwd`
+`passwd`
 
-	Change "root" password:
+Change "root" password:
 
-	`sudo passwd root`
+`sudo passwd root`
 
-	If you haven't done it when creating your config.toml file, change pwnagotchis Web UI password. Default is "changeme"
+If you haven't done it when creating your config.toml file, change pwnagotchis Web UI password. Default is "changeme"
 
-	`sudo nano /etc/pwnagotchi/config.toml`
+`sudo nano /etc/pwnagotchi/config.toml`
 
-	Locate and update the values for:
+Locate and update the values for:
 
 ```toml
 ui.web.username = "changeme"
 ui.web.password = "changeme"
 ```
 
-	Update bettercap password, if you want to, I usually leave it as-is. Default is "pwnagotchi"
+Update bettercap password, if you want to, I usually leave it as-is. Default is "pwnagotchi"
 
-	`sudo nano /etc/pwnagotchi/config.toml`
+`sudo nano /etc/pwnagotchi/config.toml`
 
-	locate and update the values for:
+locate and update the values for:
 
 ```toml
 bettercap.username = "pwnagotchi"
 bettercap.password = "pwnagotchi"
 ```
 
-	For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
+For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
+`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap`
+`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap`
 
-	`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap`
-
-	`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap`
-
-	reload pwnagotchi for config changes to apply.
-
-	`sudo systemctl restart pwnagotchi.service`
+reload pwnagotchi for config changes to apply.
+`sudo systemctl restart pwnagotchi.service`
 
 ###**Step 9) Install plugins**
 
-	Consider this step OPTIONAL, unless you would like these custom plugins. Otherwise, proceed to Step 10.
+Consider this step OPTIONAL, unless you would like these custom plugins. Otherwise, proceed to Step 10.
 
-	Make custom-plugins directory defined in config.toml, if not done so already.
+Make custom-plugins directory defined in config.toml, if not done so already.
 
-	`cd ~ sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/`
+`cd ~ sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/`
 
-	I usually use the default plugin directory.
-	*Plugins marked with &#42; are not tested by me yet, or needs some tweaking to work on my setup.
+I usually use the default plugin directory.
+*Plugins marked with &#42; are not tested by me yet, or needs some tweaking to work on my setup.
 Details soon*
 
 ####**Step - 9.1) Default plugins I use:**
-	- 	auto-update
-	- 	bt-tether
-	- 	fix-services
-	- 	**gdrivesync*****
-	- 	**gpio_buttons*****
-	- 	grid
-	- 	logtail
-	- 	memtemp
-	- 	onlinehashcrack
-	- 	session-stats
-	- 	webcfg
-	- 	webgpsmap
-	- 	wpa-sec
+- 	auto-update
+- 	bt-tether
+- 	fix-services
+- 	**gdrivesync*****
+- 	**gpio_buttons*****
+- 	grid
+- 	logtail
+- 	memtemp
+- 	onlinehashcrack
+- 	session-stats
+- 	webcfg
+- 	webgpsmap
+- 	wpa-sec
 
 ####**Step 9.2) 3rd party plugins:**
-	- Clock
-	- PiSugar3
-	- Poweruitls
-	- Pwnmenu
-	- Custom Faces
-	- Tweak View
-	- **Fancygotchi*****
-	- GPSD Easy
-	- Wardriver
-	- Aircrackonly
-	- Enable deauth / Enable Assoc / **Touch UI*****
-	- Instattack
-	- EXP V2
-	- **Achievement*****
-	- Shower Thoughts
+- Clock
+- PiSugar3
+- Poweruitls
+- Pwnmenu
+- Custom Faces
+- Tweak View
+- **Fancygotchi*****
+- GPSD Easy
+- Wardriver
+- Aircrackonly
+- Enable deauth / Enable Assoc / **Touch UI*****
+- Instattack
+- EXP V2
+- **Achievement*****
+- Shower Thoughts
 
 ###**Step 10) Back up all your hard work! Download the Backup script from Github.**
 
-	Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
-	Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
+Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
+Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
 
-	```
-	FILES_TO_BACKUP="/root/brain.nn \
-	  /root/brain.json \
-	  /root/.api-report.json \
-	  /root/.ssh \
-	  /root/.bashrc \
-	  /root/.profile \
-	  /root/handshakes \
-	  /root/peers \
-	  /etc/pwnagotchi/ \
-	  /etc/ssh/ \
-	  /var/log/pwnagotchi.log \
-	  /var/log/pwnagotchi*.gz \
-	  /home/pi/.ssh \
-	  /home/pi/.bashrc \
-	  /home/pi/.profile \
-	  /root/.api-report.json \
-	  /root/.auto-update \
-	  /root/.bt-tether* \
-	  /root/.net_pos_saved \
-	  /root/.ohc_uploads \
-	  /root/.wigle_uploads \
-	  /root/.wpa_sec_uploads \
-	  /usr/bin/pwnlib \
-	  /etc/systemd/system/pwngrid-peer.service \
-	  /usr/local/share/pwnagotchi/custom-plugins \
-	  /usr/local/lib/python3.11/dist-packages/pwnagotchi"
-	```
-	Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
-	`sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh`
+```
+FILES_TO_BACKUP="/root/brain.nn \
+  /root/brain.json \
+  /root/.api-report.json \
+  /root/.ssh \
+  /root/.bashrc \
+  /root/.profile \
+  /root/handshakes \
+  /root/peers \
+  /etc/pwnagotchi/ \
+  /etc/ssh/ \
+  /var/log/pwnagotchi.log \
+  /var/log/pwnagotchi*.gz \
+  /home/pi/.ssh \
+  /home/pi/.bashrc \
+  /home/pi/.profile \
+  /root/.api-report.json \
+  /root/.auto-update \
+  /root/.bt-tether* \
+  /root/.net_pos_saved \
+  /root/.ohc_uploads \
+  /root/.wigle_uploads \
+  /root/.wpa_sec_uploads \
+  /usr/bin/pwnlib \
+  /etc/systemd/system/pwngrid-peer.service \
+  /usr/local/share/pwnagotchi/custom-plugins \
+  /usr/local/lib/python3.11/dist-packages/pwnagotchi"
+```
+Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
+`sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh`
 
-	Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
+Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
 
 # **My Hardware:**
 - **Boards:**
