@@ -79,36 +79,36 @@ Make custom-plugins directory defined in config.toml, if not done so already.
 cd ~ sudo mkdir /usr/local/share/pwnagotchi/installed-plugins/
 
 - Step - 9.1) Default plugins I use:
-auto-update
-bt-tether
-fix-services
-gdrivesync*
-gpio_buttons*
-grid
-logtail
-memtemp
-onlinehashcrack
-session-stats
-webcfg
-webgpsmap
-wpa-sec
+	- 	auto-update
+	- 	bt-tether
+	- 	fix-services
+	- 	gdrivesync*
+	- 	gpio_buttons*
+	- 	grid
+	- 	logtail
+	- 	memtemp
+	- 	onlinehashcrack
+	- 	session-stats
+	- 	webcfg
+	- 	webgpsmap
+	- 	wpa-sec
 
 - Step 9.2) 3rd party plugins:
-Clock
-PiSugar3
-Poweruitls
-Pwnmenu
-Custom Faces
-Tweak View
-Fancygotchi*
-GPSD Easy
-Wardriver
-Aircrackonly
-Enable deauth / Enable Assoc / Touch UI*
-Instattack
-EXP V2
-Achievement*
-Shower Thoughts*
+	- Clock
+	- PiSugar3
+	- Poweruitls
+	- Pwnmenu
+	- Custom Faces
+	- Tweak View
+	- Fancygotchi*
+	- GPSD Easy
+	- Wardriver
+	- Aircrackonly
+	- Enable deauth / Enable Assoc / Touch UI*
+	- Instattack
+	- EXP V2
+	- Achievement*
+	- Shower Thoughts*
 
 Plugins marked with * are not tested by me yet, or needs some tweaking to work on my setup.
 Details soon
@@ -178,7 +178,7 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit
 	- [Adafruit Qi Charger receiver module](https://www.adafruit.com/product/1901 "Adafruit Qi Charger receiver module")
 - **GPS:**
 	- [USB GPS Dongle](https://thepihut.com/products/usb-gps-receiver-compatible-with-raspberry-pi-lattepanda-jetson-nano "USB GPS Dongle") (U-blox 7 copy)
-	- PA1010D I2C GPS board
+	- PA1010D I2C GPS boards
 		- [Adafruit](https://www.adafruit.com/product/4415 "Adafruit")
 		- [Pimoroni](https://shop.pimoroni.com/products/pa1010d-gps-breakout?variant=32257258881107 "Pimoroni")
 - **Sandisk Ultra 32Gb micro SD**
