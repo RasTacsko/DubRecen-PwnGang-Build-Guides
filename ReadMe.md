@@ -106,37 +106,58 @@ ui.web.password = "changeme"
 	`exit`
 
 - **Step 8) Change all the default passwords**
-If you haven't done it with the Raspberry Imager, change the user "pi" password. Default "raspberry"
-`passwd`
-Change "root" password:
-`sudo passwd root`
-If you haven't done it when creating your config.toml file, change pwnagotchis Web UI password. Default is "changeme"
-`sudo nano /etc/pwnagotchi/config.toml`
-Locate and update the values for:
-```toml
-ui.web.username = "changeme"
-ui.web.password = "changeme"
-```
-Update bettercap password, if you want to, I usually leave it as-is. Default is "pwnagotchi"
-`sudo nano /etc/pwnagotchi/config.toml`
-locate and update the values for:
-```toml
-bettercap.username = "pwnagotchi"
-bettercap.password = "pwnagotchi"
-```
-For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
-`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap`
-`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap`
-reload pwnagotchi for config changes to apply.
-`sudo systemctl restart pwnagotchi.service`
+
+	If you haven't done it with the Raspberry Imager, change the user "pi" password. Default is "raspberry"
+	
+	`passwd`
+	
+	Change "root" password:
+	
+	`sudo passwd root`
+	
+	If you haven't done it when creating your config.toml file, change pwnagotchis Web UI password. Default is "changeme"
+	`sudo nano /etc/pwnagotchi/config.toml`
+	
+	Locate and update the values for:
+	
+	```
+	ui.web.username = "changeme"
+	ui.web.password = "changeme"
+	```
+	
+	Update bettercap password, if you want to, I usually leave it as-is. Default is "pwnagotchi"
+	
+	`sudo nano /etc/pwnagotchi/config.toml`
+	
+	locate and update the values for:
+	
+	```
+	bettercap.username = "pwnagotchi"
+	bettercap.password = "pwnagotchi"
+	```
+	For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
+	
+	`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap`
+	
+	`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap`
+	
+	reload pwnagotchi for config changes to apply.
+	
+	`sudo systemctl restart pwnagotchi.service`
 
 - **Step 9) Install plugins**
-Consider this step OPTIONAL, unless you would like these custom plugins. Otherwise, proceed to Step 10.
-Make custom-plugins directory defined in config.toml, if not done so already.
-`cd ~ sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/`
-I usually use the default plugin directory.
 
-- **Step - 9.1) Default plugins I use would liket :**
+	Consider this step OPTIONAL, unless you would like these custom plugins. Otherwise, proceed to Step 10.
+
+	Make custom-plugins directory defined in config.toml, if not done so already.
+
+	`cd ~ sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/`
+
+	I usually use the default plugin directory.
+	*Plugins marked with &#42; are not tested by me yet, or needs some tweaking to work on my setup.
+Details soon*
+
+- **Step - 9.1) Default plugins I use:**
 	- 	auto-update
 	- 	bt-tether
 	- 	fix-services
@@ -168,13 +189,10 @@ I usually use the default plugin directory.
 	- **Achievement*****
 	- Shower Thoughts
 
-*Plugins marked with * are not tested by me yet, or needs some tweaking to work on my setup.
-Details soon*
-
-
 - **Step 10) Back up all your hard work! Download the Backup script from Github.**
-Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
-Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
+
+	Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
+	Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
 
 	FILES_TO_BACKUP="/root/brain.nn \
 	  /root/brain.json \
