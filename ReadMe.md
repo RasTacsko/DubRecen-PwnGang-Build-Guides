@@ -1,26 +1,19 @@
+[TOCM]
+
+[TOC]
 # Pwnagotchi Build Guide
-
-## Description:
-Notes for building my pwnagotchis
-Last Updated: 2023 June
-
-**Content:**
-- Build instructions
-- Plugin list
-- Hardware list
-- My setups
 
 ## Build Instructions
 
 [**PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!**](http://https://pwnagotchi.org/ "PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!")
 
-- **Step 1) Download the pwnagotchi image**
+- ###**Step 1) Download the pwnagotchi image**
 
 	I use [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"). It is under active development based on the community feedback and updated frequently with bugfixes, new features, and supports more than 80 screens. Also you can skip most of these steps, if you can ssh in to your device, and use the wizard:
 
 	`sudo pwnagotchi --wizard`
 
-- **Step 2) Flash pwnagotchi image to microSD**
+- ###**Step 2) Flash pwnagotchi image to microSD**
 
 	*Note: Recommended to use **[Raspberry Imager](https://www.raspberrypi.com/software/ "Raspberry Imager")** to flash the image.*
 
@@ -28,7 +21,7 @@ Last Updated: 2023 June
 
 	Before flashing the image I use the Raspberry Imager, to set the timezone, and change the default user/password for the OS.
 
-- **Step 3) Build your initial config.toml**
+- ###**Step 3) Build your initial config.toml**
 
 	Your initial config.toml will contain the baseline configuration for your pwnagotchi, such as the name of the device. It is recommended to avoid trying to configure all of your plugins at this stage, and only focus on the essential plugins, such as bt-tether, Modify as necessary!
 
@@ -71,12 +64,12 @@ Last Updated: 2023 June
 	ui.web.password = "changeme"
 	```
 
-- **Step 4) Copy config.toml to MicroSD (boot)**
+- ###**Step 4) Copy config.toml to MicroSD (boot)**
 
 	*Note: If you removed, insert the microSD card flashed in Step 3.*
 	Open the new drive titled "boot", and copy over your config.toml
 
-- **Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**
+- ###**Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**
 
 	For jays image since 2.8.7 until now, there is some issue with the SPI chip select stuff.
 
@@ -84,13 +77,13 @@ Last Updated: 2023 June
 
 	*Note: if you are sure that you need to modify the config.txt, you can do it after flashing the card. The config.txt is directly in the cards boot partition.*
 
-- **Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.**
+- ###**Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.**
 
 	The First boot will take longer than average due to key generation.
 
 	**NOTE**: If you specified settings for bt-tether plugin, ensure your mobile device is nearby and listening for new bluetooth devices to pair. Ensure Internet sharing via Personal Hotspot is enabled. Your mobile device will be prompted to pair with your pwnagotchi.
 
-- **Step 7) Bluetooth connection manually**
+- ###**Step 7) Bluetooth connection manually**
 
 	SSH in (default login: pi, pw: raspberry)
 
@@ -105,7 +98,7 @@ Last Updated: 2023 June
 
 	`exit`
 
-- **Step 8) Change all the default passwords**
+- ###**Step 8) Change all the default passwords**
 
 	If you haven't done it with the Raspberry Imager, change the user "pi" password. Default is "raspberry"
 
@@ -147,7 +140,7 @@ Last Updated: 2023 June
 
 	`sudo systemctl restart pwnagotchi.service`
 
-- **Step 9) Install plugins**
+- ###**Step 9) Install plugins**
 
 	Consider this step OPTIONAL, unless you would like these custom plugins. Otherwise, proceed to Step 10.
 
@@ -159,7 +152,7 @@ Last Updated: 2023 June
 	*Plugins marked with &#42; are not tested by me yet, or needs some tweaking to work on my setup.
 Details soon*
 
-- **Step - 9.1) Default plugins I use:**
+- ####**Step - 9.1) Default plugins I use:**
 	- 	auto-update
 	- 	bt-tether
 	- 	fix-services
@@ -174,7 +167,7 @@ Details soon*
 	- 	webgpsmap
 	- 	wpa-sec
 
-- **Step 9.2) 3rd party plugins:**
+- ####**Step 9.2) 3rd party plugins:**
 	- Clock
 	- PiSugar3
 	- Poweruitls
@@ -191,7 +184,7 @@ Details soon*
 	- **Achievement*****
 	- Shower Thoughts
 
-- **Step 10) Back up all your hard work! Download the Backup script from Github.**
+- ###**Step 10) Back up all your hard work! Download the Backup script from Github.**
 
 	Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
 	Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
@@ -229,7 +222,7 @@ sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh
 
 Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
 
-## Hardware list:
+## My Hardware:
 - **Boards:**
 	- Raspberry Pi
 		- 0W
