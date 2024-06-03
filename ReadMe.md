@@ -204,7 +204,7 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit
 	- [**Adafruit**](https://www.adafruit.com/ "Adafruit"):
 		- [Pitft 2,8"](https://www.adafruit.com/product/2298 "Pitft 2,8") (320x240; Resistive touch; 4 GPIO Buttons; GPIO Header)
 		- [Pitft 2,4"](https://www.adafruit.com/product/2455 "Pitft 2,4") (320x240; Resistive touch; 5 GPIO Buttons; GPIO Header)
-		- [Mini Pi tft 1,3"](https://www.adafruit.com/product/4484 "Mini Pi tft 1,3) (240x240; 2 GPIO Buttons; Stemma QT)
+		- [Mini Pi tft 1,3"](https://www.adafruit.com/product/4484 "Mini Pi tft 1,3") (240x240; 2 GPIO Buttons; Stemma QT)
 		- [TFT Bonnet](https://www.adafruit.com/product/4506) (240x240; 7 GPIO Buttons/Joystick; Stemma QT)
 	- [**Pimoroni**](https://shop.pimoroni.com/ "Pimoroni"):
 		- [Displayhatmini](https://shop.pimoroni.com/products/display-hat-mini?variant=39496084717651 "Displayhatmini") (320x240; RGB LED, 4 GPIO Buttons; Stemma QT; Breakout Garden / I2C header)
@@ -233,7 +233,7 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit
 | **Pwnamon**  |   | Pi zero w  | Waveshare E-ink V4  | [3D printed](https://cults3d.com/en/3d-model/gadget/coque-pwnagotchi-waveshare3-pisugar3-et-protection-d-ecran-plexiglass "3D printed")  | PiSugar 3  |   |
 | **FAT32**  |   | Pi 3B  | Adafruit Pitft 2,8"  | [Adafruit Case and Faceplate](https://www.adafruit.com/product/3062 "Adafruit Case and Faceplate") | USB  |   |
 | **FAT16**  |   | Pi 3A+  | Adafruit Pitft 2,4"  | [Adafruit Case](https://www.adafruit.com/product/2361 "Adafruit Case") and [Faceplate](https://www.adafruit.com/product/2808 "Faceplate") | USB  |   |
-| **Pip-Boy ** |   | Pi zero 2 w  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
+| **Pip-Boy** |   | Pi zero 2 w  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
 | **WarDriver**  |   | Pi zero 2 w  | Adafruit Mini TFT  | 3D printed (under development) | USB  | Pimoroni I2C GPS  |
 | **RasTest OLEDLCD**  |   | Pi 3A+  | Waveshare OLED/LCD |[ Geekworm Alu case](https://geekworm.com/products/raspberry-pi-3a-a-cnc-ultra-thin-aluminum-alloy-metal-case " Geekworm Alu case") (+ 3D printed faceplate under development)  | USB  |   |
 | **RasTest GFX Hat**  |   | Pi 3A+  | Pimoroni GFX Hat  | 3D printed (under development)  | Pisugar 3 Plus  | Adafruit I2C GPS  |
