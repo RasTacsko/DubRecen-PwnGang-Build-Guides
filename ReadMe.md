@@ -173,8 +173,8 @@ Details soon*
 - 	auto-update
 - 	bt-tether
 - 	fix-services
-- 	**gdrivesync*****
-- 	**gpio_buttons*****
+- 	**gdrivesync***
+- 	**gpio_buttons***
 - 	grid
 - 	logtail
 - 	memtemp
@@ -191,14 +191,14 @@ Details soon*
 - Pwnmenu
 - Custom Faces
 - Tweak View
-- **Fancygotchi*****
+- **Fancygotchi***
 - GPSD Easy
 - Wardriver
 - Aircrackonly
-- Enable deauth / Enable Assoc / **Touch UI*****
+- Enable deauth / Enable Assoc / **Touch UI***
 - Instattack
 - EXP V2
-- **Achievement*****
+- **Achievement***
 - Shower Thoughts
 
 ### **Step 10) Back up all your hard work! Download the Backup script from Github.**
@@ -250,7 +250,7 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit
 		- 3A+
 - **Screens:**
 	- [**Waveshare**](https://www.waveshare.com/ "Waveshare"):
-		- [Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13) (250x122)
+		- [Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13") (250x122)
 		- [OLED/LCD](https://www.waveshare.com/oled-lcd-hat-a.htm "OLED/LCD") (OLEDs: 128x64; SSD1306; LCD: 320x240; 4 GPIO Buttons)
 	- [**Adafruit**](https://www.adafruit.com/ "Adafruit"):
 		- [Pitft 2,8"](https://www.adafruit.com/product/2298 "Pitft 2,8") (320x240; Resistive touch; 4 GPIO Buttons; GPIO Header)
