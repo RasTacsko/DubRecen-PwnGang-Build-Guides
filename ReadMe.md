@@ -1,22 +1,3 @@
-# Table of contents
-
-- [**Pwnagotchi Build Guide**](#pwnagotchi-build-guide)
-  - [**Build Instructions**](#build-instructions)
-    - [**Step 1) Download the pwnagotchi image**](#step-1-download-the-pwnagotchi-image)
-    - [**Step 2) Flash pwnagotchi image to microSD**](#step-2-flash-pwnagotchi-image-to-microsd)
-    - [**Step 3) Build your initial config.toml**](#step-3-build-your-initial-configtoml)
-    - [**Step 4) Copy config.toml to MicroSD (boot)**](#step-4-copy-configtoml-to-microsd-boot)
-    - [**Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**](#step-5-if-you-are-using-an-spi-lcd-screen-with-pi3-or-pi0-you-may-have-to-modifiy-the-configtxt)
-    - [**Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.**](#step-6-boot-pwnagotchi-for-the-first-time-warning-be-patient)
-    - [**Step 7) Bluetooth connection manually**](#step-7-bluetooth-connection-manually)
-    - [**Step 8) Change all the default passwords**](#step-8-change-all-the-default-passwords)
-    - [**Step 9) Install plugins**](#step-9-install-plugins)
-      - [**Step - 9.1) Default plugins I use:**](#step---91-default-plugins-i-use)
-      - [**Step 9.2) 3rd party plugins:**](#step-92-3rd-party-plugins)
-    - [**Step 10) Back up all your hard work! Download the Backup script from Github.**](#step-10-back-up-all-your-hard-work-download-the-backup-script-from-github)
-- [**My Hardware:**](#my-hardware)
-- [**My Setups:**](#my-setups)
-
 # **Pwnagotchi Build Guide**
 
 ## **Build Instructions**
@@ -104,12 +85,15 @@ The First boot will take longer than average due to key generation.
 SSH in (default login: pi, pw: raspberry)
 
 `sudo bluetoothctl`
+
 `scan on`
 
 Wait until your phones mac address shows up and copy your phones mac address
 
 `pair MA: CA: DD: RE: SS`
+
 `trust MA: CA: DD: RE: SS`
+
 `exit`
 
 ###**Step 8) Change all the default passwords**
@@ -145,10 +129,13 @@ bettercap.password = "pwnagotchi"
 ```
 
 For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
+
 `sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap`
+
 `sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap`
 
 reload pwnagotchi for config changes to apply.
+
 `sudo systemctl restart pwnagotchi.service`
 
 ###**Step 9) Install plugins**
@@ -228,7 +215,9 @@ FILES_TO_BACKUP="/root/brain.nn \
   /usr/local/share/pwnagotchi/custom-plugins \
   /usr/local/lib/python3.11/dist-packages/pwnagotchi"
 ```
+
 Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
+
 `sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh`
 
 Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
