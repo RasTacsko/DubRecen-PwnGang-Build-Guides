@@ -108,41 +108,43 @@ ui.web.password = "changeme"
 - **Step 8) Change all the default passwords**
 
 	If you haven't done it with the Raspberry Imager, change the user "pi" password. Default is "raspberry"
-	
+
 	`passwd`
-	
+
 	Change "root" password:
-	
+
 	`sudo passwd root`
-	
+
 	If you haven't done it when creating your config.toml file, change pwnagotchis Web UI password. Default is "changeme"
+
 	`sudo nano /etc/pwnagotchi/config.toml`
-	
+
 	Locate and update the values for:
-	
+
 	```
 	ui.web.username = "changeme"
 	ui.web.password = "changeme"
 	```
-	
+
 	Update bettercap password, if you want to, I usually leave it as-is. Default is "pwnagotchi"
-	
+
 	`sudo nano /etc/pwnagotchi/config.toml`
-	
+
 	locate and update the values for:
-	
+
 	```
 	bettercap.username = "pwnagotchi"
 	bettercap.password = "pwnagotchi"
 	```
+
 	For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
-	
+
 	`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap`
-	
+
 	`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap`
-	
+
 	reload pwnagotchi for config changes to apply.
-	
+
 	`sudo systemctl restart pwnagotchi.service`
 
 - **Step 9) Install plugins**
@@ -194,32 +196,34 @@ Details soon*
 	Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
 	Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
 
-	FILES_TO_BACKUP="/root/brain.nn \
-	  /root/brain.json \
-	  /root/.api-report.json \
-	  /root/.ssh \
-	  /root/.bashrc \
-	  /root/.profile \
-	  /root/handshakes \
-	  /root/peers \
-	  /etc/pwnagotchi/ \
-	  /etc/ssh/ \
-	  /var/log/pwnagotchi.log \
-	  /var/log/pwnagotchi*.gz \
-	  /home/pi/.ssh \
-	  /home/pi/.bashrc \
-	  /home/pi/.profile \
-	  /root/.api-report.json \
-	  /root/.auto-update \
-	  /root/.bt-tether* \
-	  /root/.net_pos_saved \
-	  /root/.ohc_uploads \
-	  /root/.wigle_uploads \
-	  /root/.wpa_sec_uploads \
-	  /usr/bin/pwnlib \
-	  /etc/systemd/system/pwngrid-peer.service \
-	  /usr/local/share/pwnagotchi/custom-plugins \
-	  /usr/local/lib/python3.11/dist-packages/pwnagotchi"
+```
+FILES_TO_BACKUP="/root/brain.nn \
+  /root/brain.json \
+  /root/.api-report.json \
+  /root/.ssh \
+  /root/.bashrc \
+  /root/.profile \
+  /root/handshakes \
+  /root/peers \
+  /etc/pwnagotchi/ \
+  /etc/ssh/ \
+  /var/log/pwnagotchi.log \
+  /var/log/pwnagotchi*.gz \
+  /home/pi/.ssh \
+  /home/pi/.bashrc \
+  /home/pi/.profile \
+  /root/.api-report.json \
+  /root/.auto-update \
+  /root/.bt-tether* \
+  /root/.net_pos_saved \
+  /root/.ohc_uploads \
+  /root/.wigle_uploads \
+  /root/.wpa_sec_uploads \
+  /usr/bin/pwnlib \
+  /etc/systemd/system/pwngrid-peer.service \
+  /usr/local/share/pwnagotchi/custom-plugins \
+  /usr/local/lib/python3.11/dist-packages/pwnagotchi"
+```
 Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
 sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh
 
