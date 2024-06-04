@@ -1,4 +1,6 @@
 
+
+
 # Table of contents
 
 - [**Pwnagotchi Build Guide**](#pwnagotchi-build-guide)
@@ -173,34 +175,24 @@ Details soon*
 #### **Step - 9.1) Default plugins I use:**
 These plugins are provided in [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"), therefore if you have a full config.toml, the settings should be in your config.toml as well. 
 - 	[auto-update](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/auto-update.py)
-
     I usually leave it turned off, and update after the new release seems stable.
 - 	[bt-tether](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/bt-tether.py)
-
     See [Step 3](#step-3-build-your-initial-configtoml) and [Step 7](#step-7-bluetooth-connection-manually).
 - 	[fix-services](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/fix_services.py)
-
     Updated watchdog plugin to avoid the blindbug issue.
 - 	**[gdrivesync](https://github.com/jayofelony/pwnagotchi/blob/master/README-google.md)***
-
     Not tested, but I would like to use something like this, to backup my pwnys automatically to a server (preferably to one of my NAS).
 - 	**[gpio_buttons](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/gpio_buttons.py)***
-
     There are some issues with GPIO in the latest builds, I use it to control the pwnmenu.
 - 	[grid](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/grid.py)
-
     Sending data to [the grid](https://opwngrid.xyz/)
 - 	[logtail](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/logtail.py)
-
     Useful tool in the webUI, to check your logs without ssh.
 - 	[memtemp](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/memtemp.py)
-
     Shows system information on the screen (CPU temperature; load and memory load).
 - 	[onlinehashcrack](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/onlinehashcrack.py)
-
     Automatically uploads handshakes to [onlinehashcrack.com](https://onlinehashcrack.com).
 - 	[session-stats](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/session-stats.py)
-
     Displays stats of the current session in the webUI.
 - 	[webcfg](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/webcfg.py)
 
@@ -209,30 +201,44 @@ These plugins are provided in [**Jayofelonys repo**](https://github.com/jayofelo
 
     Shows GPS location of your handshakes on a map.
 - 	[wpa-sec](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/wpa-sec.py)
-
     Automatically uploads handshakes to [wpa-sec](https://wpa-sec.stanev.org).
 
 #### **Step 9.2) 3rd party plugins and mods:**
 - [Clock](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/clock.py)
+Clock/Calendar for pwnagotchi
 - [PiSugar3](https://github.com/nullm0ose/pwnagotchi-plugin-pisugar3)
+The PiSugar 3 Plugin displays the battery percentage as well as the charging status on your Pwnagotchi's UI.
 - [Powerutils](https://github.com/sn0wflakeAU/powerutils)
-- [Pwnmenu](https://github.com/sn0wflakeAU/pwnmenu/tree/main)
-- [Custom Faces](https://github.com/roodriiigooo/PWNAGOTCHI-CUSTOM-FACES-MOD/tree/main)
+The Powerutils plugin lets you run the Pwnagotchi's internal shutdown, restart, or reboot functions, instead of the system "shutdown" command. By using the internal functions, you can access other features such as syncing the AI data before shutdown, or switching between AUTO and MANU mode.
+- [Pwnmenu](https://github.com/sn0wflakeAU/pwnmenu/)
+Pwnmenu is a plugin that lets you run scripts on a Pwnagotchi using the 2.13 inch Waveshare e-paper display. You can use it to select and call scripts to extend the functionality of the host Raspberry Pi Zero W.
+To do this, the Pwnmenu can be controlled with terminal commands bound to GPIO pins.
+- [Custom Faces](https://github.com/roodriiigooo/PWNAGOTCHI-CUSTOM-FACES-MOD)
+A mod that allows you to use custom images as pwnagotchi Faces with transparency feature (.png) and themed plugins.
 - [Tweak View](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/tweak_view.py)
+Edit the UI layout.
 - **[Fancygotchi](https://github.com/V0r-T3x/pwnagotchi-fancygotchi)***
+Theme manager for the Pwnagotchi. **NOT WORKING WITH JAYS IMAGE AT THE MOMENT!!!**
 - [GPSD Easy](https://github.com/jayofelony/pwnagotchi-torch-plugins/blob/main/gpsdeasy.py)
+Uses gpsd to report lat/long on the screen and setup bettercap pcap gps logging. Better than the baked in GPS plugin.
 - [Wardriver](https://github.com/cyberartemio/wardriver-pwnagotchi-plugin)
-- [Enable deauth](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_deauth.py) / [Enable Assoc](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_assoc.py) / **[Touch UI](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/Touch_UI.py)***
+A simple plugin for wardriving on your pwnagotchi.
+- [Enable deauth](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_deauth.py) / [Enable Assoc](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_assoc.py)
+Enable and disable **DEAUTH** and **ASSOC** attacks on the fly. Enabled when plugin loads, disabled when plugin unloads.
+- **[Touch UI](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/Touch_UI.py)***
+Use touchscreen input to toggle settings.
 - [Instattack](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/instattack.py)
+Pwn more aggressively. Launch immediate associate or deauth attack when bettercap spots a device.
 - [EXP V2](https://github.com/Kaska89/pwnagotchi-EXPv2-plugin)
+Get exp every time a handshake get captured. You can add the Age plugin too, but I reflash my build so often that EXP is more than enough for my pwnys.
 - **[Achievement](https://github.com/LegendEvent/pwnagotchi-custom-plugins/blob/main/achievements.py)***
+Collect achievements for daily challenges.
 - [Shower Thoughts](https://github.com/NoxiousKarn/Showerthoughts)
+Displays random r/showerthoughts headlines on your pwnagotchi when the device is waiting. You need to modify core files, which are rewritten to default whith autoupdate. Thinking about changing to [RSS Voice](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/rss_voice.py) plugin in the future
 
-### **Step 10) Back up all your hard work! Download the Backup script from Github.**
-
-Link: https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh
+### **Step 10) Back up all your hard work! **
+Download the Backup script from [Github]( https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh)
 Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
-
 ```
 FILES_TO_BACKUP="/root/brain.nn \
   /root/brain.json \
@@ -261,12 +267,13 @@ FILES_TO_BACKUP="/root/brain.nn \
   /usr/local/share/pwnagotchi/custom-plugins \
   /usr/local/lib/python3.11/dist-packages/pwnagotchi"
 ```
-
 Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
+Make the script executable:
+`sudo chmod +x backup.sh`
+Run the script
+`sudo ./backup.sh`
 
-`sudo chmod +x backup.sh # make backup.sh executable sudo ./backup.sh`
-
-Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit and Discord!
+Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on [Reddit](https://www.reddit.com/r/pwnagotchi/) and [Discord](https://discord.gg/jUhuehCK4c)!
 
 # **My Hardware:**
 - **Boards:**
@@ -315,6 +322,6 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit
 | **FAT16**  |   | Pi 3A+  | Adafruit Pitft 2,4"  | [Adafruit Case](https://www.adafruit.com/product/2361 "Adafruit Case") and [Faceplate](https://www.adafruit.com/product/2808 "Faceplate") | USB  |   |
 | **Pip-Boy** |   | Pi zero 2 w  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
 | **WarDriver**  |   | Pi zero 2 w  | Adafruit Mini TFT  | 3D printed (under development) | USB  | Pimoroni I2C GPS  |
-| **RasTest OLEDLCD**  |   | Pi 3A+  | Waveshare OLED/LCD |[ Geekworm Alu case](https://geekworm.com/products/raspberry-pi-3a-a-cnc-ultra-thin-aluminum-alloy-metal-case " Geekworm Alu case") (+ 3D printed faceplate under development)  | USB  |   |
+| **RasTest OLEDLCD**  |   | Pi 3A+  | Waveshare OLED/LCD |[Geekworm Alu case](https://geekworm.com/products/raspberry-pi-3a-a-cnc-ultra-thin-aluminum-alloy-metal-case " Geekworm Alu case") (+ 3D printed faceplate under development)  | USB  |   |
 | **RasTest GFX Hat**  |   | Pi 3A+  | Pimoroni GFX Hat  | 3D printed (under development)  | Pisugar 3 Plus  | Adafruit I2C GPS  |
 |   |   |   |   |   |   |   |
