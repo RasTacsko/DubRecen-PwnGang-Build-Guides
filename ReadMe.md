@@ -173,18 +173,44 @@ Details soon*
 #### **Step - 9.1) Default plugins I use:**
 These plugins are provided in [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"), therefore if you have a full config.toml, the settings should be in your config.toml as well. 
 - 	[auto-update](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/auto-update.py)
+
+    I usually leave it turned off, and update after the new release seems stable.
 - 	[bt-tether](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/bt-tether.py)
+
+    See [Step 3](#step-3-build-your-initial-configtoml) and [Step 7](#step-7-bluetooth-connection-manually).
 - 	[fix-services](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/fix_services.py)
+
+    Updated watchdog plugin to avoid the blindbug issue.
 - 	**[gdrivesync](https://github.com/jayofelony/pwnagotchi/blob/master/README-google.md)***
+
+    Not tested, but I would like to use something like this, to backup my pwnys automatically to a server (preferably to one of my NAS).
 - 	**[gpio_buttons](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/gpio_buttons.py)***
+
+    There are some issues with GPIO in the latest builds, I use it to control the pwnmenu.
 - 	[grid](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/grid.py)
+
+    Sending data to [the grid](https://opwngrid.xyz/)
 - 	[logtail](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/logtail.py)
+
+    Useful tool in the webUI, to check your logs without ssh.
 - 	[memtemp](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/memtemp.py)
+
+    Shows system information on the screen (CPU temperature; load and memory load).
 - 	[onlinehashcrack](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/onlinehashcrack.py)
+
+    Automatically uploads handshakes to [onlinehashcrack.com](https://onlinehashcrack.com).
 - 	[session-stats](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/session-stats.py)
+
+    Displays stats of the current session in the webUI.
 - 	[webcfg](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/webcfg.py)
+
+    Editor for your config.toml file in the webUI.
 - 	[webgpsmap](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/webgpsmap.py)
+
+    Shows GPS location of your handshakes on a map.
 - 	[wpa-sec](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/wpa-sec.py)
+
+    Automatically uploads handshakes to [wpa-sec](https://wpa-sec.stanev.org).
 
 #### **Step 9.2) 3rd party plugins and mods:**
 - [Clock](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/clock.py)
