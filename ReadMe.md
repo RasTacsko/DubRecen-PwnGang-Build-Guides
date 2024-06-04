@@ -5,18 +5,18 @@
 
 - [**Pwnagotchi Build Guide**](#pwnagotchi-build-guide)
   - [Build Instructions](#build-instructions)
-    - [Step 1) Download the pwnagotchi image](#step-1-download-the-pwnagotchi-image)
-    - [Step 2) Flash pwnagotchi image to microSD](#step-2-flash-pwnagotchi-image-to-microsd)
-    - [Step 3) Build your initial config.toml](#step-3-build-your-initial-configtoml)
-    - [Step 4) Copy config.toml to MicroSD (boot)](#step-4-copy-configtoml-to-microsd-boot)
-    - [Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.](#step-5-if-you-are-using-an-spi-lcd-screen-with-pi3-or-pi0-you-may-have-to-modifiy-the-configtxt)
-    - [Step 6) Boot pwnagotchi for the first time WARNING: BE PATIENT.](#step-6-boot-pwnagotchi-for-the-first-time-warning-be-patient)
+    - [Step 1) Download the image](#step-1-download-the-pwnagotchi-image)
+    - [Step 2) Flash the image to microSD](#step-2-flash-pwnagotchi-image-to-microsd)
+    - [Step 3) Build your config.toml](#step-3-build-your-initial-configtoml)
+    - [Step 4) Copy config.toml to MicroSD](#step-4-copy-configtoml-to-microsd-boot)
+    - [Step 5) **Important if you are using an SPI LCD screen!**](#step-5-if-you-are-using-an-spi-lcd-screen-with-pi3-or-pi0-you-may-have-to-modifiy-the-configtxt)
+    - [Step 6) Boot for the first time](#step-6-boot-pwnagotchi-for-the-first-time-warning-be-patient)
     - [Step 7) Bluetooth connection manually](#step-7-bluetooth-connection-manually)
     - [Step 8) Change all the default passwords](#step-8-change-all-the-default-passwords)
     - [Step 9) Install plugins](#step-9-install-plugins)
-      - [Step - 9.1) Default plugins I use:](#step---91-default-plugins-i-use)
-      - [Step 9.2) 3rd party plugins:](#step-92-3rd-party-plugins)
-    - [Step 10) Back up all your hard work! Download the Backup script from Github.](#step-10-back-up-all-your-hard-work-download-the-backup-script-from-github)
+      - [Step 9.1) Default plugins:](#step---91-default-plugins-i-use)
+      - [Step 9.2) 3rd party plugins and mods:](#step-92-3rd-party-plugins)
+    - [Step 10) Back up your work](#step-10-back-up-all-your-hard-work-download-the-backup-script-from-github)
 - [**My Hardware:**](#my-hardware)
 - [**My Setups:**](#my-setups)
 
@@ -173,7 +173,7 @@ I usually use the default plugin directory.
 *Plugins marked with &#42; are not tested by me yet, or needs some tweaking to work on my setup.*
 Installation instruction and details soon!
 
-#### **Step - 9.1) Default plugins I use:**
+#### **Step 9.1) Default plugins I use:**
 These plugins are provided in [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"), therefore if you have a full config.toml, the settings should be in your config.toml as well. 
 - 	[auto-update](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/auto-update.py)
 	I usually leave it turned off, and update after the new release seems stable.
