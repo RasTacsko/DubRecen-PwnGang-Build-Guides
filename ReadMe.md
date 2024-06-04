@@ -1,3 +1,4 @@
+
 # Table of contents
 
 - [**Pwnagotchi Build Guide**](#pwnagotchi-build-guide)
@@ -82,7 +83,7 @@ ui.web.password = "changeme"
 
 ### **Step 4) Copy config.toml to MicroSD (boot)**
 
-*Note: If you removed, insert the microSD card flashed in Step 3.*
+*Note: If you removed, insert the microSD card flashed in Step 2.*
 Open the new drive titled "boot", and copy over your config.toml
 
 ### **Step 5) If you are using an SPI LCD screen with Pi3 or Pi0, you may have to modifiy the config.txt.**
@@ -109,9 +110,9 @@ SSH in (default login: pi, pw: raspberry)
 
 Wait until your phones mac address shows up and copy your phones mac address
 
-`pair MA: CA: DD: RE: SS`
+`pair MA:CA:DD:RE:SS`
 
-`trust MA: CA: DD: RE: SS`
+`trust MA:CA:DD:RE:SS`
 
 `exit`
 
@@ -170,36 +171,36 @@ I usually use the default plugin directory.
 Details soon*
 
 #### **Step - 9.1) Default plugins I use:**
-- 	auto-update
-- 	bt-tether
-- 	fix-services
-- 	**gdrivesync***
-- 	**gpio_buttons***
-- 	grid
-- 	logtail
-- 	memtemp
-- 	onlinehashcrack
-- 	session-stats
-- 	webcfg
-- 	webgpsmap
-- 	wpa-sec
+These plugins are provided in [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"), therefore if you have a full config.toml, the settings should be in your config.toml as well. 
+- 	[auto-update](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/auto-update.py)
+- 	[bt-tether](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/bt-tether.py)
+- 	[fix-services](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/fix_services.py)
+- 	**[gdrivesync](https://github.com/jayofelony/pwnagotchi/blob/master/README-google.md)***
+- 	**[gpio_buttons](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/gpio_buttons.py)***
+- 	[grid](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/grid.py)
+- 	[logtail](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/logtail.py)
+- 	[memtemp](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/memtemp.py)
+- 	[onlinehashcrack](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/onlinehashcrack.py)
+- 	[session-stats](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/session-stats.py)
+- 	[webcfg](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/webcfg.py)
+- 	[webgpsmap](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/webgpsmap.py)
+- 	[wpa-sec](https://github.com/jayofelony/pwnagotchi/blob/master/pwnagotchi/plugins/default/wpa-sec.py)
 
-#### **Step 9.2) 3rd party plugins:**
-- Clock
-- PiSugar3
-- Poweruitls
-- Pwnmenu
-- Custom Faces
-- Tweak View
-- **Fancygotchi***
-- GPSD Easy
-- Wardriver
-- Aircrackonly
-- Enable deauth / Enable Assoc / **Touch UI***
-- Instattack
-- EXP V2
-- **Achievement***
-- Shower Thoughts
+#### **Step 9.2) 3rd party plugins and mods:**
+- [Clock](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/clock.py)
+- [PiSugar3](https://github.com/nullm0ose/pwnagotchi-plugin-pisugar3)
+- [Powerutils](https://github.com/sn0wflakeAU/powerutils)
+- [Pwnmenu](https://github.com/sn0wflakeAU/pwnmenu/tree/main)
+- [Custom Faces](https://github.com/roodriiigooo/PWNAGOTCHI-CUSTOM-FACES-MOD/tree/main)
+- [Tweak View](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/tweak_view.py)
+- **[Fancygotchi](https://github.com/V0r-T3x/pwnagotchi-fancygotchi)***
+- [GPSD Easy](https://github.com/jayofelony/pwnagotchi-torch-plugins/blob/main/gpsdeasy.py)
+- [Wardriver](https://github.com/cyberartemio/wardriver-pwnagotchi-plugin)
+- [Enable deauth](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_deauth.py) / [Enable Assoc](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_assoc.py) / **[Touch UI](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/Touch_UI.py)***
+- [Instattack](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/instattack.py)
+- [EXP V2](https://github.com/Kaska89/pwnagotchi-EXPv2-plugin)
+- **[Achievement](https://github.com/LegendEvent/pwnagotchi-custom-plugins/blob/main/achievements.py)***
+- [Shower Thoughts](https://github.com/NoxiousKarn/Showerthoughts)
 
 ### **Step 10) Back up all your hard work! Download the Backup script from Github.**
 
@@ -243,11 +244,13 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on Reddit
 
 # **My Hardware:**
 - **Boards:**
-	- Raspberry Pi
-		- 0W
-		- 0W2
-		- 3B
-		- 3A+
+	- [Raspberry Pi](https://www.raspberrypi.com/)
+		- [0](https://www.raspberrypi.com/products/raspberry-pi-zero/)
+		- [0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
+		- [0W2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+		- [3B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
+		- [3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
+		- [400](https://www.raspberrypi.com/products/raspberry-pi-400-unit/)
 - **Screens:**
 	- [**Waveshare**](https://www.waveshare.com/ "Waveshare"):
 		- [Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13") (250x122)
