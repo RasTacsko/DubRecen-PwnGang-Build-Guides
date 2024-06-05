@@ -1,22 +1,23 @@
 
 
 
+
 # Table of contents
 
 - [**Pwnagotchi Build Guide**](#pwnagotchi-build-guide)
   - [Build Instructions](#build-instructions)
-    - [Step 1) Download the image](#step-1-download-the-pwnagotchi-image)
+    - [Step 1) Download the image](#step-1-download-the-image)
     - [Step 2) Flash the image to microSD](#step-2-flash-pwnagotchi-image-to-microsd)
-    - [Step 3) Build your config.toml](#step-3-build-your-initial-configtoml)
+    - [Step 3) Build your co](#step-3-build-your-initial-configtoml)
     - [Step 4) Copy config.toml to MicroSD](#step-4-copy-configtoml-to-microsd-boot)
-    - [Step 5) **Important if you are using an SPI LCD screen!**](#step-5-if-you-are-using-an-spi-lcd-screen-with-pi3-or-pi0-you-may-have-to-modifiy-the-configtxt)
-    - [Step 6) Boot for the first time](#step-6-boot-pwnagotchi-for-the-first-time-warning-be-patient)
+    - [Step 5) **Important if you are using an SPI LCD screen!**](#step-5-if-you-are-using-an-spi-lcd-screennfigtxt)
+    - [Step 6) Boot for the first time](#step-6-boot-for-the-first-time-warning-be-patient)
     - [Step 7) Bluetooth connection manually](#step-7-bluetooth-connection-manually)
     - [Step 8) Change all the default passwords](#step-8-change-all-the-default-passwords)
     - [Step 9) Install plugins](#step-9-install-plugins)
       - [Step 9.1) Default plugins:](#step---91-default-plugins-i-use)
       - [Step 9.2) 3rd party plugins and mods:](#step-92-3rd-party-plugins)
-    - [Step 10) Back up your work](#step-10-back-up-all-your-hard-work-download-the-backup-script-from-github)
+    - [Step 10) Back up your work](#step-10-back-up-your-nwork)
 - [**My Hardware:**](#my-hardware)
 - [**My Setups:**](#my-setups)
 
@@ -30,9 +31,11 @@
 
 I use [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"). It is under active development based on the community feedback and updated frequently with bugfixes, new features, and supports more than 80 screens. Also you can skip most of these steps, if you can ssh in to your device, and use the wizard:
 
-`sudo pwnagotchi --wizard`
+```sh
+sudo pwnagotchi --wizard
+```
 
-### **Step 2) Flash pwnagotchi image to microSD**
+### **Step 2) Flash th image to microSD**
 
 *Note: Recommended to use **[Raspberry Imager](https://www.raspberrypi.com/software/ "Raspberry Imager")** to flash the image.*
 
@@ -40,7 +43,7 @@ Several tutorials exist online (Google or YouTube) that provide instructions for
 
 Before flashing the image I use the Raspberry Imager, to set the timezone, and change the default user/password for the OS.
 
-### **Step 3) Build your initial config.toml**
+### **Step 3) Build your config.toml**
 
 Your initial config.toml will contain the baseline configuration for your pwnagotchi, such as the name of the device. It is recommended to avoid trying to configure all of your plugins at this stage, and only focus on the essential plugins, such as bt-tether, Modify as necessary!
 
@@ -92,7 +95,7 @@ Open the new drive titled "boot", and copy over your config.toml
 
 For jays image since 2.8.7 until now, there is some issue with the SPI chip select stuff.
 
-If your screen is not showing any image, but the backlight is on, you should modify the **/boot/firmware/config.txt**, and change ***dtoverlay=spi0-0cs*** to ***dtoverlay=spi0-1cs*** under the necessary pi settings.
+If your screen is not showing any image, but the backlight is on, you should modify the  `/boot/firmware/config.txt`, and change `dtoverlay=spi0-0cs` to `dtoverlay=spi0-1cs` under the necessary pi settings.
 
 *Note: if you are sure that you need to modify the config.txt, you can do it after flashing the card. The config.txt is directly in the cards boot partition.*
 
@@ -106,31 +109,38 @@ The First boot will take longer than average due to key generation.
 
 SSH in (default login: pi, pw: raspberry)
 
-`sudo bluetoothctl`
-
-`scan on`
+```sh
+sudo bluetoothctl
+scan on
+```
 
 Wait until your phones mac address shows up and copy your phones mac address
 
-`pair MA:CA:DD:RE:SS`
-
-`trust MA:CA:DD:RE:SS`
-
-`exit`
+```sh
+pair MA:CA:DD:RE:SS
+trust MA:CA:DD:RE:SS
+exit
+```
 
 ### **Step 8) Change all the default passwords**
 
 If you haven't done it with the Raspberry Imager, change the user "pi" password. Default is "raspberry"
 
-`passwd`
+```sh
+passwd
+```
 
 Change "root" password:
 
-`sudo passwd root`
+```sh
+sudo passwd root
+```
 
 If you haven't done it when creating your config.toml file, change pwnagotchis Web UI password. Default is "changeme"
 
-`sudo nano /etc/pwnagotchi/config.toml`
+```sh
+sudo nano /etc/pwnagotchi/config.toml
+```
 
 Locate and update the values for:
 
@@ -152,13 +162,19 @@ bettercap.password = "pwnagotchi"
 
 For the new bettercap password to work yoyu have to modify these two files as well to match config.toml:
 
-`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap`
+```sh
+sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-auto.cap
+```
 
-`sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap`
+```sh
+sudo nano /usr/local/share/bettercap/caplets/pwnagotchi-manual.cap
+```
 
 reload pwnagotchi for config changes to apply.
 
-`sudo systemctl restart pwnagotchi.service`
+```sh
+sudo systemctl restart pwnagotchi.service
+```
 
 ### **Step 9) Install plugins**
 
@@ -166,12 +182,14 @@ Consider this step OPTIONAL, unless you would like these custom plugins. Otherwi
 
 Make custom-plugins directory defined in config.toml, if not done so already.
 
-`cd ~ sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/`
+```sh
+cd ~ sudo mkdir /usr/local/share/pwnagotchi/custom-plugins/
+```
 
 I usually use the default plugin directory.
 
 *Plugins marked with &#42; are not tested by me yet, or needs some tweaking to work on my setup.*
-Installation instruction and details soon!
+Installation instruction and details soon
 
 #### **Step 9.1) Default plugins I use:**
 These plugins are provided in [**Jayofelonys repo**](https://github.com/jayofelony/pwnagotchi/releases/tag/v2.8.9 "Jayofelonys repo"), therefore if you have a full config.toml, the settings should be in your config.toml as well. 
@@ -220,7 +238,9 @@ To do this, the Pwnmenu can be controlled with terminal commands bound to GPIO p
 	Theme manager for the Pwnagotchi. **NOT WORKING WITH JAYS IMAGE AT THE MOMENT!!!**
 - [GPSD Easy](https://github.com/jayofelony/pwnagotchi-torch-plugins/blob/main/gpsdeasy.py)
 	Uses gpsd to report lat/long on the screen and setup bettercap pcap gps logging. Better than the baked in GPS plugin. The plugin should install gpsd automatically, but it can take a long time, especially with BT internet sharing. Before enabling the plugin for the first time you can install GPSD manually from the terminal:
-`sudo apt-get install gpsd gpsd-clients`
+```sh
+sudo apt-get install gpsd gpsd-clients
+```
 - [Wardriver](https://github.com/cyberartemio/wardriver-pwnagotchi-plugin)
 	A simple plugin for wardriving on your pwnagotchi.
 - [Enable deauth](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_deauth.py) / [Enable Assoc](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_assoc.py)
@@ -236,8 +256,7 @@ To do this, the Pwnmenu can be controlled with terminal commands bound to GPIO p
 - [Shower Thoughts](https://github.com/NoxiousKarn/Showerthoughts)
 	Displays random r/showerthoughts headlines on your pwnagotchi when the device is waiting. You need to modify core files, which are rewritten to default whith autoupdate. Thinking about changing to [RSS Voice](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/rss_voice.py) plugin in the future
 
-### **Step 10) Back up all your hard work!**
-Download the Backup script from [Github]( https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh)
+### **Step 10) Back up all your hard work!Download the Backup script from [Github]( https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh)
 Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
 ```
 FILES_TO_BACKUP="/root/brain.nn \
@@ -269,9 +288,13 @@ FILES_TO_BACKUP="/root/brain.nn \
 ```
 Note: The last entry in the list must include an end quotation mark. Be sure to relocate this to the end of the list before saving.
 Make the script executable:
-`sudo chmod +x backup.sh`
+```sh
+sudo chmod +x backup.sh
+```
 Run the script
-`sudo ./backup.sh`
+```sh
+sudo ./backup.sh
+```
 
 Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on [Reddit](https://www.reddit.com/r/pwnagotchi/) and [Discord](https://discord.gg/jUhuehCK4c)!
 
