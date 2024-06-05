@@ -256,7 +256,8 @@ sudo apt-get install gpsd gpsd-clients
 - [Shower Thoughts](https://github.com/NoxiousKarn/Showerthoughts)
 	Displays random r/showerthoughts headlines on your pwnagotchi when the device is waiting. You need to modify core files, which are rewritten to default whith autoupdate. Thinking about changing to [RSS Voice](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/rss_voice.py) plugin in the future
 
-### **Step 10) Back up all your hard work!Download the Backup script from [Github]( https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh)
+### **Step 10) Back up all your hard work!**
+Download the Backup script from [Github]( https://github.com/evilsocket/pwnagotchi/blob/master/scripts/backup.sh)
 Append the "FILES_TO_BACKUP" section of the backup script to include the following additional files that have been added or modified as a result of this guide:
 ```
 FILES_TO_BACKUP="/root/brain.nn \
