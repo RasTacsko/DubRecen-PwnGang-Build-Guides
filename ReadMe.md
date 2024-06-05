@@ -24,7 +24,7 @@
 
 ## **Build Instructions**
 
-[**PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!**](http://https://pwnagotchi.org "PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!")
+[**PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!**](https://pwnagotchi.org "PLEASE REFER TO THE UNOFICCIAL PWNAGOTCHI SITE!")
 
 ### **Step 1) Download the pwnagotchi image**
 
