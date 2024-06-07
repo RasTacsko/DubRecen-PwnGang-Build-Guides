@@ -9,6 +9,7 @@
 ui.display.type = "waveshare_4"
 ui.display.rotation = 180
 ui.fps = 1
+ui.invert = true
 
 main.plugins.bt-tether.enabled = true
 main.plugins.bt-tether.devices.android-phone.enabled = true
@@ -90,4 +91,3 @@ ui.faces.upload2 = "/custom-faces/upload2.png"
 ui.faces.png = true
 ui.faces.position_x = 0
 ui.faces.position_y = 34
-ui.invert = true
