@@ -59,20 +59,20 @@ main.plugins.wardriver.wigle.donate = false
 
 main.plugins.wardriver.whitelist = []
 ```
-### [Enable deauth](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_deauth.py)
-Config:
-```toml
-
-```
 ### [Enable Assoc](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_assoc.py)
 Config:
 ```toml
 main.plugins.enable_assoc.enabled = true
 ```
-### [Instattack](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/instattack.py)
+### [Enable deauth](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/enable_deauth.py)
 Config:
 ```toml
 main.plugins.enable_deauth.enabled = true
+```
+### [Instattack](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/instattack.py)
+Config:
+```toml
+main.plugins.instattack.enabled = true
 ```
 ### [Clock](https://github.com/Sniffleupagus/pwnagotchi_plugins/blob/main/clock.py)
 Config:
