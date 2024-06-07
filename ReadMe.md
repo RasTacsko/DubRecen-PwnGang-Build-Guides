@@ -339,7 +339,7 @@ Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on [Reddi
 
 | Name  | Picture  | Board  | Screen  | Case  | Power  | Extra  |
 | :------------ | :------------ | :------------ | :------------ |  :------------ | :------------ | :------------ |
-| **Pwnamon**  |   | Pi zero w  | Waveshare E-ink V4  | [3D printed](https://cults3d.com/en/3d-model/gadget/coque-pwnagotchi-waveshare3-pisugar3-et-protection-d-ecran-plexiglass "3D printed")  | PiSugar 3  |   |
+| **Pwnamon**  | ![Pwnamon UI](https://github.com/RasTacsko/Pwnagotchi-workinprogress/blob/main/Pictures/UI_pwnamon.jpg?raw=true)  | Pi zero w  | Waveshare E-ink V4  | [3D printed](https://cults3d.com/en/3d-model/gadget/coque-pwnagotchi-waveshare3-pisugar3-et-protection-d-ecran-plexiglass "3D printed")  | PiSugar 3  |   |
 | **FAT32**  |   | Pi 3B  | Adafruit Pitft 2,8"  | [Adafruit Case and Faceplate](https://www.adafruit.com/product/3062 "Adafruit Case and Faceplate") | USB  |   |
 | **FAT16**  |   | Pi 3A+  | Adafruit Pitft 2,4"  | [Adafruit Case](https://www.adafruit.com/product/2361 "Adafruit Case") and [Faceplate](https://www.adafruit.com/product/2808 "Faceplate") | USB  |   |
 | **Pip-Boy** |   | Pi zero 2 w  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
