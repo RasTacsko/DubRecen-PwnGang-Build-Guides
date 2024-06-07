@@ -296,6 +296,7 @@ sudo ./backup.sh
 Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on [Reddit](https://www.reddit.com/r/pwnagotchi/) and [Discord](https://discord.gg/jUhuehCK4c)!
 
 # My Hardware
+![Hardware](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/Hardware.jpg?raw=true)
 - **Boards:**
 	- [Raspberry Pi](https://www.raspberrypi.com/)
 		- [0](https://www.raspberrypi.com/products/raspberry-pi-zero/)
