@@ -1,6 +1,9 @@
 
+
 # Table of contents
 
+- [My Hardware](#my-hardware)
+- [My Setups](#my-setups)
 - [Pwnagotchi Build Guide](#pwnagotchi-build-guide)
   - [Build Instructions](#build-instructions)
     - [Step 1) Download the image](#step-1-download-the-image)
@@ -13,8 +16,59 @@
     - [Step 8) Change the default passwords](#step-8-change-the-default-passwords)
     - [Step 9) Plugins and mods](#step-9-plugins-and-mods)
     - [Step 10) Back up your work](#step-10-back-up-your-work)
-- [My Hardware](#my-hardware)
-- [My Setups](#my-setups)
+# My Hardware
+![Hardware](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/Hardware.jpg?raw=true)
+- **Boards:**
+	- [Raspberry Pi](https://www.raspberrypi.com/)
+		- [0](https://www.raspberrypi.com/products/raspberry-pi-zero/)
+		- [0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
+		- [0W2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+		- [3B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
+		- [3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
+		- [400](https://www.raspberrypi.com/products/raspberry-pi-400-unit/)
+- **Screens:**
+	- [**Waveshare**](https://www.waveshare.com/ "Waveshare"):
+		- [Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13") (250x122)
+		- [OLED/LCD](https://www.waveshare.com/oled-lcd-hat-a.htm "OLED/LCD") (OLEDs: 128x64; SSD1306; LCD: 320x240; 4 GPIO Buttons)
+	- [**Adafruit**](https://www.adafruit.com/ "Adafruit"):
+		- [Pitft 2,8"](https://www.adafruit.com/product/2298 "Pitft 2,8") (320x240; Resistive touch; 4 GPIO Buttons; GPIO Header)
+		- [Pitft 2,4"](https://www.adafruit.com/product/2455 "Pitft 2,4") (320x240; Resistive touch; 5 GPIO Buttons; GPIO Header)
+		- [Mini Pi tft 1,3"](https://www.adafruit.com/product/4484 "Mini Pi tft 1,3") (240x240; 2 GPIO Buttons; Stemma QT)
+		- [TFT Bonnet](https://www.adafruit.com/product/4506) (240x240; 7 GPIO Buttons/Joystick; Stemma QT)
+	- [**Pimoroni**](https://shop.pimoroni.com/ "Pimoroni"):
+		- [Displayhatmini](https://shop.pimoroni.com/products/display-hat-mini?variant=39496084717651 "Displayhatmini") (320x240; RGB LED, 4 GPIO Buttons; Stemma QT; Breakout Garden / I2C header)
+		- [Pirateaudio line-out](https://shop.pimoroni.com/products/pirate-audio-line-out?variant=31189750546515 "Pirateaudio line-out") (240x240; 4 GPIO Buttons; PCM5100A DAC chip with 3,5mm jack)
+		- [GFX Hat 128x64](https://shop.pimoroni.com/products/gfx-hat?variant=12828343631955 "GFX Hat 128x64") (128x64; RGB Backlight; 6 capacitive touch buttons)
+		- [Hyperpixel Touch](https://shop.pimoroni.com/products/hyperpixel-4?variant=12569485443155 "Hyperpixel Touch") (800x480; Breakout Garden / I2C header)
+	- [**Sparkfun**](https://www.sparkfun.com/ "Sparkfun"):
+		- [I2C OLED](https://www.sparkfun.com/products/24606 "I2C OLED") (128x32; SSD1306)
+- **Power:**
+	- [PiSugar 3](https://github.com/PiSugar/PiSugar/wiki/PiSugar-3-Series "PiSugar 3")
+	- [Pisugar 3 Plus](https://www.tindie.com/products/pisugar/pisugar-3-plus-battery-for-raspberry-pi-3b3b4b/ "Pisugar 3 Plus")
+	- [Adafruit Qi Charger receiver module](https://www.adafruit.com/product/1901 "Adafruit Qi Charger receiver module")
+- **GPS:**
+	- [USB GPS Dongle](https://thepihut.com/products/usb-gps-receiver-compatible-with-raspberry-pi-lattepanda-jetson-nano "USB GPS Dongle") (U-blox 7 copy)
+	- PA1010D I2C GPS boards
+		- [Adafruit](https://www.adafruit.com/product/4415 "Adafruit")
+		- [Pimoroni](https://shop.pimoroni.com/products/pa1010d-gps-breakout?variant=32257258881107 "Pimoroni")
+- **Sandisk Ultra 32Gb micro SD**
+- **Micro USB OTG cables and adapters**
+- **USB Ethernet adapter**
+
+# My Setups
+
+**Build logs and details coming soon!**
+
+| Name  | Picture  | Board  | Screen  | Case  | Power  | Extra  |
+| :------------ | :------------ | :------------ | :------------ |  :------------ | :------------ | :------------ |
+| **Pwnamon**  | ![Pwnamon UI](https://github.com/RasTacsko/Pwnagotchi-workinprogress/blob/main/Pictures/UI_pwnamon.jpg?raw=true)  | [Raspberry Pi0W](https://www.raspberrypi.com/products/raspberry-pi-zero/)|[Waveshare Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13")|[3D printed](https://cults3d.com/en/3d-model/gadget/coque-pwnagotchi-waveshare3-pisugar3-et-protection-d-ecran-plexiglass "3D printed")|[PiSugar 3](https://www.tindie.com/products/pisugar/pisugar-3-battery-for-raspberry-pi-zero/ "PiSugar 3")|[USB GPS Dongle](https://thepihut.com/products/usb-gps-receiver-compatible-with-raspberry-pi-lattepanda-jetson-nano "USB GPS Dongle")||
+| **FAT32**  |   | Pi 3B  | Adafruit Pitft 2,8"  | [Adafruit Case and Faceplate](https://www.adafruit.com/product/3062 "Adafruit Case and Faceplate") | USB  |   |
+| **FAT16**  |   | Pi 3A+  | Adafruit Pitft 2,4"  | [Adafruit Case](https://www.adafruit.com/product/2361 "Adafruit Case") and [Faceplate](https://www.adafruit.com/product/2808 "Faceplate") | USB  |   |
+| **Pip-Boy** | ![Pip-Boy](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/PipBoy.jpg?raw=true)  | Pi zero 2 w  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
+| **WarDriver**  | ![WarDriver](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/WarDriverCaseDesign.png?raw=true)  | Pi zero 2 w  | Adafruit Mini TFT  | 3D printed (under development) | USB  | Pimoroni I2C GPS  |
+| **RasTest OLEDLCD**  | ![OLED LCD](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/OledLCD.jpg?raw=true)  | Pi 3A+  | Waveshare OLED/LCD |[Geekworm Alu case](https://geekworm.com/products/raspberry-pi-3a-a-cnc-ultra-thin-aluminum-alloy-metal-case " Geekworm Alu case") (+ 3D printed faceplate under development)  | USB  |   |
+| **RasTest GFX Hat**  | ![GFX Hat](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/GFXHat.jpg?raw=true)  | Pi 3A+  | Pimoroni GFX Hat  | 3D printed (under development)  | Pisugar 3 Plus  | Adafruit I2C GPS  |
+|   |   |   |   |   |   |   |
 
 # Pwnagotchi Build Guide
 
@@ -295,56 +349,4 @@ sudo ./backup.sh
 
 Enjoy your new Pwnagotchi, and please support the Pwnagotchi community on [Reddit](https://www.reddit.com/r/pwnagotchi/) and [Discord](https://discord.gg/jUhuehCK4c)!
 
-# My Hardware
-![Hardware](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/Hardware.jpg?raw=true)
-- **Boards:**
-	- [Raspberry Pi](https://www.raspberrypi.com/)
-		- [0](https://www.raspberrypi.com/products/raspberry-pi-zero/)
-		- [0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
-		- [0W2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
-		- [3B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
-		- [3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
-		- [400](https://www.raspberrypi.com/products/raspberry-pi-400-unit/)
-- **Screens:**
-	- [**Waveshare**](https://www.waveshare.com/ "Waveshare"):
-		- [Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13") (250x122)
-		- [OLED/LCD](https://www.waveshare.com/oled-lcd-hat-a.htm "OLED/LCD") (OLEDs: 128x64; SSD1306; LCD: 320x240; 4 GPIO Buttons)
-	- [**Adafruit**](https://www.adafruit.com/ "Adafruit"):
-		- [Pitft 2,8"](https://www.adafruit.com/product/2298 "Pitft 2,8") (320x240; Resistive touch; 4 GPIO Buttons; GPIO Header)
-		- [Pitft 2,4"](https://www.adafruit.com/product/2455 "Pitft 2,4") (320x240; Resistive touch; 5 GPIO Buttons; GPIO Header)
-		- [Mini Pi tft 1,3"](https://www.adafruit.com/product/4484 "Mini Pi tft 1,3") (240x240; 2 GPIO Buttons; Stemma QT)
-		- [TFT Bonnet](https://www.adafruit.com/product/4506) (240x240; 7 GPIO Buttons/Joystick; Stemma QT)
-	- [**Pimoroni**](https://shop.pimoroni.com/ "Pimoroni"):
-		- [Displayhatmini](https://shop.pimoroni.com/products/display-hat-mini?variant=39496084717651 "Displayhatmini") (320x240; RGB LED, 4 GPIO Buttons; Stemma QT; Breakout Garden / I2C header)
-		- [Pirateaudio line-out](https://shop.pimoroni.com/products/pirate-audio-line-out?variant=31189750546515 "Pirateaudio line-out") (240x240; 4 GPIO Buttons; PCM5100A DAC chip with 3,5mm jack)
-		- [GFX Hat 128x64](https://shop.pimoroni.com/products/gfx-hat?variant=12828343631955 "GFX Hat 128x64") (128x64; RGB Backlight; 6 capacitive touch buttons)
-		- [Hyperpixel Touch](https://shop.pimoroni.com/products/hyperpixel-4?variant=12569485443155 "Hyperpixel Touch") (800x480; Breakout Garden / I2C header)
-	- [**Sparkfun**](https://www.sparkfun.com/ "Sparkfun"):
-		- [I2C OLED](https://www.sparkfun.com/products/24606 "I2C OLED") (128x32; SSD1306)
-- **Power:**
-	- [PiSugar 3](https://www.tindie.com/products/pisugar/pisugar-3-battery-for-raspberry-pi-zero/ "PiSugar 3")
-	- [Pisugar 3 Plus](https://www.tindie.com/products/pisugar/pisugar-3-plus-battery-for-raspberry-pi-3b3b4b/ "Pisugar 3 Plus")
-	- [Adafruit Qi Charger receiver module](https://www.adafruit.com/product/1901 "Adafruit Qi Charger receiver module")
-- **GPS:**
-	- [USB GPS Dongle](https://thepihut.com/products/usb-gps-receiver-compatible-with-raspberry-pi-lattepanda-jetson-nano "USB GPS Dongle") (U-blox 7 copy)
-	- PA1010D I2C GPS boards
-		- [Adafruit](https://www.adafruit.com/product/4415 "Adafruit")
-		- [Pimoroni](https://shop.pimoroni.com/products/pa1010d-gps-breakout?variant=32257258881107 "Pimoroni")
-- **Sandisk Ultra 32Gb micro SD**
-- **Micro USB OTG cables and adapters**
-- **USB Ethernet adapter**
 
-# My Setups
-
-**Build logs and details coming soon!**
-
-| Name  | Picture  | Board  | Screen  | Case  | Power  | Extra  |
-| :------------ | :------------ | :------------ | :------------ |  :------------ | :------------ | :------------ |
-| **Pwnamon**  | ![Pwnamon UI](https://github.com/RasTacsko/Pwnagotchi-workinprogress/blob/main/Pictures/UI_pwnamon.jpg?raw=true)  | Pi zero w  | Waveshare E-ink V4  | [3D printed](https://cults3d.com/en/3d-model/gadget/coque-pwnagotchi-waveshare3-pisugar3-et-protection-d-ecran-plexiglass "3D printed")  | PiSugar 3  |   |
-| **FAT32**  |   | Pi 3B  | Adafruit Pitft 2,8"  | [Adafruit Case and Faceplate](https://www.adafruit.com/product/3062 "Adafruit Case and Faceplate") | USB  |   |
-| **FAT16**  |   | Pi 3A+  | Adafruit Pitft 2,4"  | [Adafruit Case](https://www.adafruit.com/product/2361 "Adafruit Case") and [Faceplate](https://www.adafruit.com/product/2808 "Faceplate") | USB  |   |
-| **Pip-Boy** | ![Pip-Boy](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/PipBoy.jpg?raw=true)  | Pi zero 2 w  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
-| **WarDriver**  | ![WarDriver](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/WarDriverCaseDesign.png?raw=true)  | Pi zero 2 w  | Adafruit Mini TFT  | 3D printed (under development) | USB  | Pimoroni I2C GPS  |
-| **RasTest OLEDLCD**  | ![OLED LCD](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/OledLCD.jpg?raw=true)  | Pi 3A+  | Waveshare OLED/LCD |[Geekworm Alu case](https://geekworm.com/products/raspberry-pi-3a-a-cnc-ultra-thin-aluminum-alloy-metal-case " Geekworm Alu case") (+ 3D printed faceplate under development)  | USB  |   |
-| **RasTest GFX Hat**  | ![GFX Hat](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/GFXHat.jpg?raw=true)  | Pi 3A+  | Pimoroni GFX Hat  | 3D printed (under development)  | Pisugar 3 Plus  | Adafruit I2C GPS  |
-|   |   |   |   |   |   |   |
