@@ -20,12 +20,12 @@
 ![Hardware](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/Hardware.jpg?raw=true)
 - **Boards:**
 	- [Raspberry Pi](https://www.raspberrypi.com/)
-		- [0](https://www.raspberrypi.com/products/raspberry-pi-zero/)
-		- [0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
-		- [0W2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
-		- [3B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
-		- [3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
-		- [400](https://www.raspberrypi.com/products/raspberry-pi-400-unit/)
+		- [Pi 0](https://www.raspberrypi.com/products/raspberry-pi-zero/)
+		- [Pi 0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
+		- [Pi 0W2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+		- [Pi 3B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
+		- [Pi 3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
+		- [Pi 400](https://www.raspberrypi.com/products/raspberry-pi-400-unit/)
 - **Screens:**
 	- [**Waveshare**](https://www.waveshare.com/ "Waveshare"):
 		- [Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13") (250x122)
@@ -61,13 +61,13 @@
 
 | Name  | Picture  | Board  | Screen  | Case  | Power  | Extra  |
 | :------------ | :------------ | :------------ | :------------ |  :------------ | :------------ | :------------ |
-| **Pwnamon**  | ![Pwnamon UI](https://github.com/RasTacsko/Pwnagotchi-workinprogress/blob/main/Pictures/UI_pwnamon.jpg?raw=true)  | [Raspberry Pi0W](https://www.raspberrypi.com/products/raspberry-pi-zero/)|[Waveshare Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13")|[3D printed](https://cults3d.com/en/3d-model/gadget/coque-pwnagotchi-waveshare3-pisugar3-et-protection-d-ecran-plexiglass "3D printed")|[PiSugar 3](https://www.tindie.com/products/pisugar/pisugar-3-battery-for-raspberry-pi-zero/ "PiSugar 3")|[USB GPS Dongle](https://thepihut.com/products/usb-gps-receiver-compatible-with-raspberry-pi-lattepanda-jetson-nano "USB GPS Dongle")||
-| **FAT32**  |   | Pi 3B  | Adafruit Pitft 2,8"  | [Adafruit Case and Faceplate](https://www.adafruit.com/product/3062 "Adafruit Case and Faceplate") | USB  |   |
-| **FAT16**  |   | Pi 3A+  | Adafruit Pitft 2,4"  | [Adafruit Case](https://www.adafruit.com/product/2361 "Adafruit Case") and [Faceplate](https://www.adafruit.com/product/2808 "Faceplate") | USB  |   |
-| **Pip-Boy** | ![Pip-Boy](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/PipBoy.jpg?raw=true)  | Pi zero 2 w  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
-| **WarDriver**  | ![WarDriver](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/WarDriverCaseDesign.png?raw=true)  | Pi zero 2 w  | Adafruit Mini TFT  | 3D printed (under development) | USB  | Pimoroni I2C GPS  |
-| **RasTest OLEDLCD**  | ![OLED LCD](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/OledLCD.jpg?raw=true)  | Pi 3A+  | Waveshare OLED/LCD |[Geekworm Alu case](https://geekworm.com/products/raspberry-pi-3a-a-cnc-ultra-thin-aluminum-alloy-metal-case " Geekworm Alu case") (+ 3D printed faceplate under development)  | USB  |   |
-| **RasTest GFX Hat**  | ![GFX Hat](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/GFXHat.jpg?raw=true)  | Pi 3A+  | Pimoroni GFX Hat  | 3D printed (under development)  | Pisugar 3 Plus  | Adafruit I2C GPS  |
+| **[Pwnamon](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/6382eb9aa6768224d26e587589d7e9bc4fd3348f/Builds/Pwnamon/pwnamon.md)**  | ![Pwnamon UI](https://github.com/RasTacsko/Pwnagotchi-workinprogress/blob/main/Pictures/UI_pwnamon.jpg?raw=true)  | [Raspberry Pi0W](https://www.raspberrypi.com/products/raspberry-pi-zero/)|[Waveshare Eink 2,13"](https://www.waveshare.com/2.13inch-e-paper-hat.htm "Eink 2,13")|[3D printed](https://cults3d.com/en/3d-model/gadget/coque-pwnagotchi-waveshare3-pisugar3-et-protection-d-ecran-plexiglass "3D printed")|[PiSugar 3](https://www.tindie.com/products/pisugar/pisugar-3-battery-for-raspberry-pi-zero/ "PiSugar 3")|[USB GPS Dongle](https://thepihut.com/products/usb-gps-receiver-compatible-with-raspberry-pi-lattepanda-jetson-nano "USB GPS Dongle")||
+| **FAT32**  |   | [Pi 3B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)  | Adafruit Pitft 2,8"  | [Adafruit Case and Faceplate](https://www.adafruit.com/product/3062 "Adafruit Case and Faceplate") | USB  |   |
+| **FAT16**  |   | [Pi 3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)  | Adafruit Pitft 2,4"  | [Adafruit Case](https://www.adafruit.com/product/2361 "Adafruit Case") and [Faceplate](https://www.adafruit.com/product/2808 "Faceplate") | USB  |   |
+| **Pip-Boy** | ![Pip-Boy](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/PipBoy.jpg?raw=true)  | [Pi 0W2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)  | Pimoroni Displayhat mini  | [3D printed](https://makerworld.com/en/models/417258#profileId-319628 "3D printed")  | PiSugar 3  |   |
+| **WarDriver**  | ![WarDriver](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/WarDriverCaseDesign.png?raw=true)  | [Pi 0W2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)  | Adafruit Mini TFT  | 3D printed (under development) | USB  | Pimoroni I2C GPS  |
+| **RasTest OLEDLCD**  | ![OLED LCD](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/OledLCD.jpg?raw=true)  | [Pi 3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)  | Waveshare OLED/LCD |[Geekworm Alu case](https://geekworm.com/products/raspberry-pi-3a-a-cnc-ultra-thin-aluminum-alloy-metal-case " Geekworm Alu case") (+ 3D printed faceplate under development)  | USB  |   |
+| **RasTest GFX Hat**  | ![GFX Hat](https://github.com/RasTacsko/DubRecen-PwnGang-Build-Guides/blob/main/Pictures/GFXHat.jpg?raw=true)  | [Pi 3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)  | Pimoroni GFX Hat  | 3D printed (under development)  | Pisugar 3 Plus  | Adafruit I2C GPS  |
 |   |   |   |   |   |   |   |
 
 # Pwnagotchi Build Guide
