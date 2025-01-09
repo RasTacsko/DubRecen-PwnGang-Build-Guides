@@ -1,8 +1,3 @@
----
-layout: default
-title: Readme
----
-
 # Table of contents
 
 - [My Hardware](#my-hardware)
