@@ -76,9 +76,9 @@ img {
     margin: 0 auto;
 }
 
-/* Center content with a width similar to GitHub */
+/* Center content with a fixed width */
 .container {
-    max-width: 640px;
+    width: 640px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
