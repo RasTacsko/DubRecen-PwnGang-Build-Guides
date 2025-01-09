@@ -1,0 +1,13 @@
+title: DubRecen-PwnGang-Build-Guides
+description: A description of your site
+baseurl: "/DubRecen-PwnGang-Build-Guides" # the subpath of your site, e.g. /blog
+url: "https://rastacsko.github.io" # the base hostname & protocol for your site
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Other optional settings
+author: RasTacsko
+markdown: kramdown
+highlighter: rouge
