@@ -1,7 +1,10 @@
-/* monokai-theme.css */
+/* assets/css/monokai-theme.css */
+
+/* Existing styles */
 body {
     background-color: #272822;
     color: #f8f8f2;
+    font-family: Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -10,11 +13,17 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     color: #66d9ef;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 code, pre {
     background-color: #272822;
     color: #f8f8f2;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 pre {
@@ -42,4 +51,27 @@ code {
 
 .function {
     color: #a6e22e;
+}
+
+/* Additional styling for Markdown elements */
+blockquote {
+    border-left: 5px solid #75715e;
+    padding-left: 10px;
+    color: #75715e;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* New styles for images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
