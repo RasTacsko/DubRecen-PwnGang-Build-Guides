@@ -1,0 +1,45 @@
+/* monokai-theme.css */
+body {
+    background-color: #272822;
+    color: #f8f8f2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f92672;
+}
+
+a {
+    color: #66d9ef;
+}
+
+code, pre {
+    background-color: #272822;
+    color: #f8f8f2;
+}
+
+pre {
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+code {
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.comment {
+    color: #75715e;
+}
+
+.keyword {
+    color: #f92672;
+}
+
+.string {
+    color: #e6db74;
+}
+
+.function {
+    color: #a6e22e;
+}
